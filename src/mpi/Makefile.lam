@@ -1,0 +1,122 @@
+#/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# *                                                                 *
+# * Copyright (C) 1998-2012 Timothy E. Dowling                      *
+# *                                                                 *
+# * This program is free software; you can redistribute it and/or   *
+# * modify it under the terms of the GNU General Public License     *
+# * as published by the Free Software Foundation; either version 2  *
+# * of the License, or (at your option) any later version.          *
+# * A copy of this License is in the file:                          *
+# *   $EPIC_PATH/License.txt                                        *
+# *                                                                 *
+# * This program is distributed in the hope that it will be useful, *
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of  *
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.            *
+# *                                                                 *
+# * You should have received a copy of the GNU General Public       *
+# * License along with this program; if not, write to the Free      *
+# * Software Foundation, Inc., 51 Franklin Street, Fifth Floor,     *
+# * Boston, MA 02110-1301, USA.                                     *
+# *                                                                 *
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+#
+#  NOTE: The programs initial and change are only compiled in
+#  epic/src/single. It has not proved to be practical to maintain
+#  mpi versions of these programs, especially initial.
+#
+#  The object-code suffix _me.o denotes mpi-epic.
+#
+
+CC         = mpicc
+LINKER     = mpicc
+LIB_PATH   = -L$(EPIC_PATH)/netcdf/lib \
+             -L$(EPIC_PATH)/src/rt/cdisort \
+             -L$(EPIC_PATH)/lib
+LIB_LIST   = -lnetcdf -lmpg -lcdisort -lm 
+
+HFILES = $(EPIC_PATH)/include/epic.h \
+         $(EPIC_PATH)/include/epic_funcs_util.h \
+         $(EPIC_PATH)/include/epic_microphysics.h \
+         $(EPIC_PATH)/include/epic_subgrid.h \
+         $(EPIC_PATH)/include/rt_heating.h
+
+
+INCLUDE_DIR = -I$(EPIC_PATH)/include \
+              -I$(EPIC_PATH)/netcdf/include 
+	      
+# EPIC_MPI indicates that the computer is using MPI:
+
+DEFINES  = -DEPIC_MPI \
+           -D$(MACHINE_TYPE) \
+           -DEPIC_PATH=\"$(EPIC_PATH)\" \
+           -DEPIC_PRECISION=$(EPIC_PRECISION) \
+           -DEPIC_CHECK=$(EPIC_CHECK)
+	   
+C_FLAGS  = $(CFLAGS) $(INCLUDE_DIR) $(DEFINES)
+F_FLAGS  = $(FFLAGS)
+
+LIBS     = $(LIB_PATH) $(LIB_LIST)
+LD_FLAGS = $(LDFLAGS)
+
+PROGS    = epic 
+
+EPICSRCS = $(EPIC_PATH)/src/core/epic_globals.c \
+           $(EPIC_PATH)/src/mpi/m_epic_functions.c \
+	   $(EPIC_PATH)/src/core/epic_main.c \
+           $(EPIC_PATH)/src/core/epic_timestep.c \
+           $(EPIC_PATH)/src/core/epic_sensible_heating.c \
+           $(EPIC_PATH)/src/core/epic_flux.c \
+           $(EPIC_PATH)/src/core/epic_funcs_io.c \
+           $(EPIC_PATH)/src/core/epic_funcs_util.c \
+           $(EPIC_PATH)/src/core/epic_funcs_astron.c \
+           $(EPIC_PATH)/src/core/epic_funcs_thermo.c \
+           $(EPIC_PATH)/src/core/epic_funcs_diag.c \
+           $(EPIC_PATH)/src/core/epic_adjust.c \
+           $(EPIC_PATH)/src/chemistry/epic_funcs_chem.c \
+           $(EPIC_PATH)/src/clouds/epic_microphysics.c \
+           $(EPIC_PATH)/src/clouds/epic_microphysics_funcs.c \
+           $(EPIC_PATH)/src/subgrid/epic_subgrid.c \
+           $(EPIC_PATH)/src/rt/rt_heating.c
+
+EPICOBJS = $(EPIC_PATH)/src/core/epic_globals_me.o \
+           $(EPIC_PATH)/src/mpi/m_epic_functions_me.o \
+	   $(EPIC_PATH)/src/core/epic_main_me.o \
+           $(EPIC_PATH)/src/core/epic_timestep_me.o \
+           $(EPIC_PATH)/src/core/epic_sensible_heating_me.o \
+           $(EPIC_PATH)/src/core/epic_flux_me.o \
+           $(EPIC_PATH)/src/core/epic_funcs_io_me.o \
+           $(EPIC_PATH)/src/core/epic_funcs_util_me.o \
+           $(EPIC_PATH)/src/core/epic_funcs_astron_me.o \
+           $(EPIC_PATH)/src/core/epic_funcs_thermo_me.o \
+           $(EPIC_PATH)/src/core/epic_funcs_diag_me.o \
+           $(EPIC_PATH)/src/core/epic_adjust_me.o \
+           $(EPIC_PATH)/src/chemistry/epic_funcs_chem_me.o \
+           $(EPIC_PATH)/src/clouds/epic_microphysics_me.o \
+           $(EPIC_PATH)/src/clouds/epic_microphysics_funcs_me.o \
+           $(EPIC_PATH)/src/subgrid/epic_subgrid_me.o \
+           $(EPIC_PATH)/src/rt/rt_heating_me.o
+
+SRCS = $(EPICSRCS)
+
+.SUFFIXES:
+.SUFFIXES: _me.o .c .f
+.c_me.o: $(HFILES)
+	$(CC) $(C_FLAGS) -c $*.c -o $*_me.o
+
+all: $(PROGS)
+
+epic: $(EPICOBJS) $(HFILES)
+	$(LINKER) $(LD_FLAGS) $(EPICOBJS) $(LIBS) -o mpi_$@
+
+clear:
+	@rm -f core *.o *.BAK *.bak *~ ._*
+
+install: all
+	@for name in $(PROGS); do \
+	  mv mpi_$$name $(EPIC_PATH)/bin ; \
+	done
+
+depend:
+	makedepend -f Makefile -- $(C_FLAGS) -- $(SRCS)
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.

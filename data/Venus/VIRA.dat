@@ -1,0 +1,39 @@
+ Venus sounding data.  From the Venus International Reference Atmosphere (VIRA),
+ as listed in the Planetary Scientist's Companion, p. 119.
+ Extended below z = 0 assuming constant dT/dz by T. Dowling.
+
+# Altitude[km]  Temperature[K]  Pressure[hPa]  Density[kg/m^3]
+12
+   -10.0            812.4        169213.0        107.74
+     0.0            735.3         92100.0         64.79
+    10.0            658.2         47390.0         37.72
+    20.0            580.7         22520.0         20.39
+    30.0            496.9          9581.0         10.15
+    40.0            417.6          3501.0          4.404
+    50.0            350.5          1066.0          1.594
+    60.0            262.8           235.7          0.469
+    70.0            229.8            36.9          0.0839
+    80.0            197.1             4.476        0.0119
+    90.0            169.4             0.3736       0.00115
+   100.0            175.4             0.0266       0.0000789
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,207 @@
+#!/bin/csh
+#
+# Set the EPIC_..._PATH variables below, and then execute this script at the 
+#  command line to install the EPIC visualization package for Matlab.  
+#
+# NOTES:
+#        Be sure the file EPICncVis_<version>.tar.gz is in the local directory
+#          when INSTALL_EPICncVis is executed.
+#
+#        If you change the locations of EPIC_MATLAB_USER_PATH or EPIC_DATA_PATH,
+#          just modify their definitions in EPICncVis/EPIC_nc_PATHs.m rather than
+#          re-executing this script.
+#
+#        After the install, make sure your startup.m file (located in 
+#          $EPIC_MATLAB_USER_PATH) satisfies the requirements listed in 
+#          README_STARTUP_M.
+#
+#        Start matlab at the command line from the directory 
+#          $EPIC_MATLAB_USER_PATH.  We recommend defining an alias to automate 
+#          this process.
+#
+#
+set VERSION                = "EPICncVis_2.03"
+set EPIC_MATLAB_SRC_PATH   = $EPIC4_PATH/tools/matlab/$VERSION
+set EPIC_MATLAB_USER_PATH  = ~/matlab
+set EPIC_DATA_PATH         = ~/
+
+
+
+
+#======================== DO NOT ALTER BELOW THIS LINE ======================== 
+
+
+#
+# Check for installation files, and make sure PATH definitions are valid
+#
+if ( !(-e ./INSTALL_EPICncVis) ) then
+  echo " "
+  echo " error:  INSTALL_EPICncVis must be executed from the local directory."
+  echo " "
+  exit
+else
+  set INSTALL_FILE_ORIG = "`pwd`/INSTALL_EPICncVis"
+endif
+
+set PACKAGE_TAR_FILE  = $VERSION.tar
+set PACKAGE_GZ_FILE   = $VERSION.tar.gz
+if ( !(-e ./$PACKAGE_GZ_FILE) ) then
+  echo " "
+  echo " error:  Can not find $PACKAGE_GZ_FILE."
+  echo "         (make sure it is in the same directory as INSTALL_EPICncVis)"
+  echo " "
+  exit
+else
+  set PACKAGE_FILE_ORIG = "`pwd`/$PACKAGE_GZ_FILE"
+endif
+
+if ( !(-e ./README) ) then
+  echo " "
+  echo " error:  Can not find README."
+  echo "         (make sure it is in the same directory as INSTALL_EPICncVis)"
+  echo " "
+  exit
+else
+  set README_FILE_ORIG  = "`pwd`/README"
+endif
+
+if ( -f $EPIC_MATLAB_SRC_PATH ) then
+  echo " "
+  echo " error:  Can not create directory $EPIC_MATLAB_SRC_PATH."
+  echo "         (currently exists as a file)"
+  echo " "
+  exit
+endif
+
+if ( -f $EPIC_MATLAB_USER_PATH ) then
+  echo " "
+  echo " error:  Can not create directory $EPIC_MATLAB_USER_PATH."
+  echo "         (currently exists as a file)"
+  echo " "
+  exit
+endif
+
+if ( -f $EPIC_DATA_PATH ) then
+  echo " "
+  echo " error:  Can not create directory $EPIC_DATA_PATH."
+  echo "         (currently exists as a file)"
+  echo " "
+  exit
+endif
+
+
+
+#
+# Extract EPICncVis library
+#
+echo " "
+echo " Extracting EPICncVis to $EPIC_MATLAB_SRC_PATH ....."
+if ( !(-e $EPIC_MATLAB_SRC_PATH) ) then
+  mkdir $EPIC_MATLAB_SRC_PATH
+endif
+
+if ( `pwd` != $EPIC_MATLAB_SRC_PATH ) then
+  cp $PACKAGE_FILE_ORIG $EPIC_MATLAB_SRC_PATH/
+endif
+cd $EPIC_MATLAB_SRC_PATH
+
+gunzip  $PACKAGE_GZ_FILE
+tar xf  $PACKAGE_TAR_FILE
+#gzip -c $PACKAGE_TAR_FILE > $PACKAGE_GZ_FILE
+rm      $PACKAGE_TAR_FILE
+
+
+#
+# Create EPICncVis_PATHs.m and printEPICncVisVersion.m
+#
+echo " Creating $EPIC_MATLAB_SRC_PATH/EPICncVis/EPICncVis_PATHs.m ....."
+cd $EPIC_MATLAB_SRC_PATH/EPICncVis
+
+echo "%"                                                        > EPICncVis_PATHs.m
+echo "% Set the paths required for EPICncVis :"                >> EPICncVis_PATHs.m
+echo "%"                                                       >> EPICncVis_PATHs.m
+echo "%   EPIC_MATLAB_SRC_PATH"                                >> EPICncVis_PATHs.m
+echo "%   EPIC_MATLAB_USER_PATH"                               >> EPICncVis_PATHs.m
+echo "%   EPIC_DATA_PATH"                                      >> EPICncVis_PATHs.m
+echo "%"                                                       >> EPICncVis_PATHs.m
+echo " "                                                       >> EPICncVis_PATHs.m
+echo "EPIC_MATLAB_SRC_PATH   = '$EPIC_MATLAB_SRC_PATH';"       >> EPICncVis_PATHs.m
+echo "EPIC_MATLAB_USER_PATH  = '$EPIC_MATLAB_USER_PATH';"      >> EPICncVis_PATHs.m
+echo "EPIC_DATA_PATH         = '$EPIC_DATA_PATH';"             >> EPICncVis_PATHs.m
+echo " "                                                       >> EPICncVis_PATHs.m
+echo " "                                                       >> EPICncVis_PATHs.m
+
+echo " Creating $EPIC_MATLAB_SRC_PATH/EPICncVisTools/printEPICncVisVersion.m ....."
+cd $EPIC_MATLAB_SRC_PATH/EPICncVisTools
+echo "function printEPICncVisVersion() "                        > printEPICncVisVersion.m
+echo "% "                                                      >> printEPICncVisVersion.m
+echo "% function printEPICncVisVersion() "                     >> printEPICncVisVersion.m
+echo "% "                                                      >> printEPICncVisVersion.m
+echo "%  Function displays the current version of EPICncVis. " >> printEPICncVisVersion.m
+echo "% "                                                      >> printEPICncVisVersion.m
+echo " "                                                       >> printEPICncVisVersion.m
+echo "VERSION = '$VERSION'; "                                  >> printEPICncVisVersion.m
+echo " "                                                       >> printEPICncVisVersion.m
+echo "fprintf([' Using ' VERSION ' .....\n']); "               >> printEPICncVisVersion.m
+echo " "                                                       >> printEPICncVisVersion.m
+
+
+#
+# Create EPIC_DATA_PATH
+#
+if ( !(-e $EPIC_DATA_PATH) ) then
+  echo " Creating $EPIC_DATA_PATH ....."
+  mkdir $EPIC_DATA_PATH
+endif
+
+
+#
+# Create startup.m
+#
+if ( !(-e $EPIC_MATLAB_USER_PATH) ) then
+  mkdir $EPIC_MATLAB_USER_PATH
+endif
+cd $EPIC_MATLAB_USER_PATH
+
+if ( !(-e startup.m) ) then
+  echo " Creating $EPIC_MATLAB_USER_PATH/startup.m ....."
+  less $EPIC_MATLAB_SRC_PATH/README_STARTUP_M > startup.m
+else
+  echo " "
+  echo " Warning:  $EPIC_MATLAB_USER_PATH/startup.m already exists. "
+  echo "           Make sure to copy the contents of README_STARTUP_M \!\!\!\!"
+  echo "           NOTE YOUR CURRENT VERSION NUMBER \!\!\!\!"
+  echo " "
+  #echo "           ( file will be ammended ) "
+  #echo " "
+  #less $EPIC_MATLAB_SRC_PATH/README_STARTUP_M >> startup.m
+endif
+
+
+#
+# Move Installation files to EPIC_MATLAB_SRC_PATH/INSTALL
+#
+echo " Moving installation files to $EPIC_MATLAB_SRC_PATH/INSTALL ....."
+if ( !(-e $EPIC_MATLAB_SRC_PATH/INSTALL) ) then
+  mkdir $EPIC_MATLAB_SRC_PATH/INSTALL
+endif
+mv $PACKAGE_FILE_ORIG  $EPIC_MATLAB_SRC_PATH/INSTALL
+mv $README_FILE_ORIG   $EPIC_MATLAB_SRC_PATH/INSTALL
+mv $INSTALL_FILE_ORIG  $EPIC_MATLAB_SRC_PATH/INSTALL
+
+
+
+
+#
+# Display recommendation for starting matlab
+#
+set USER_MATLAB_COMMAND    = matlab_epic
+echo "Done"
+echo " "
+echo " Start Matlab using an alias such as :"
+echo "    alias $USER_MATLAB_COMMAND  'cd $EPIC_MATLAB_USER_PATH;  /bin/matlab'"
+echo "    (add this to your .cshrc or your shell's analogous rc file)"
+echo " "
+
+
+

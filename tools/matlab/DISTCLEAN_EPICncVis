@@ -1,0 +1,92 @@
+#!/bin/csh 
+
+#
+# Set names of PATHs and FILEs
+#
+set VERSION              = EPICncVis_2.03
+
+set EPIC_MATLAB_SRC_PATH = ~/epic/tools/matlab  # (version number is added below)
+
+set EPICncVis_FILES      = ( EPICncVis EPICncVisTools EXAMPLES README_STARTUP_M matlab_extras )
+
+
+
+#
+# Reset the SRC_PATH, and set the names of PACKAGE files
+#
+set EPIC_MATLAB_SRC_PATH = $EPIC_MATLAB_SRC_PATH/$VERSION
+set PACKAGE_TAR_FILE     = $VERSION.tar
+set PACKAGE_GZ_FILE      = $VERSION.tar.gz
+
+if ( !(-e $EPIC_MATLAB_SRC_PATH) ) then
+  #echo " "
+  #echo " Error - $EPIC_MATLAB_SRC_PATH does not exist."
+  #echo " "
+  exit
+endif
+
+
+#
+# Copy EPICncVis_FILES to tmp
+#
+set EXEC_PATH = `pwd`
+cd $EPIC_MATLAB_SRC_PATH
+
+if ( !(-e tmp) ) then
+  mkdir tmp
+else
+  echo " "
+  echo " Directory $EPIC_MATLAB_SRC_PATH/tmp already exists"
+  echo " ( Remove it and try again )"
+  echo " "
+  exit
+endif
+foreach file ( $EPICncVis_FILES )
+  cp -r $file tmp/
+end
+
+
+#
+# Remove .swp files
+#
+cd $EPIC_MATLAB_SRC_PATH/tmp
+
+set REMOVE_SWP_FROM_DIRECTORIES = ( EPICncVis EPICncVis/attributes_mxn EPICncVis/attributes_slide EPICncVisTools EXAMPLES )
+foreach dir ( $REMOVE_SWP_FROM_DIRECTORIES )
+  cd $EPIC_MATLAB_SRC_PATH/tmp/$dir
+  foreach file ( * ) 
+    if (-f .$file.swp) then
+      rm .$file.swp
+    endif
+  end
+end
+
+
+
+#
+# Create EPICncVis_GZ_FILE file
+#
+cd $EPIC_MATLAB_SRC_PATH/tmp
+
+if ( -e $PACKAGE_TAR_FILE ) rm $PACKAGE_TAR_FILE
+if ( -e $PACKAGE_GZ_FILE  ) rm $PACKAGE_GZ_FILE
+
+tar  cf $PACKAGE_TAR_FILE *
+gzip -c $PACKAGE_TAR_FILE > $PACKAGE_GZ_FILE
+
+mv $PACKAGE_GZ_FILE ../INSTALL
+rm -rf *
+
+
+#
+# Move Installation files to EPIC_MATLAB_SRC_PATH/..
+#
+cd $EPIC_MATLAB_SRC_PATH
+
+rm -rf tmp
+cp $EPIC_MATLAB_SRC_PATH/INSTALL/*  $EPIC_MATLAB_SRC_PATH/../
+
+cd $EPIC_MATLAB_SRC_PATH/../
+rm -rf $EPIC_MATLAB_SRC_PATH
+
+

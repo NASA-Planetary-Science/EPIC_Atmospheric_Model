@@ -1,0 +1,271 @@
+configure: loading site script /usr/share/site/x86_64-unknown-linux-gnu
+configure: netCDF 3.6.3
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+configure: checking user options
+checking whether CXX is set to ''... yes
+checking whether FC is set to ''... yes
+checking whether F90 is set to ''... no
+checking whether this is a netCDF-4.x build... no
+checking whether netCDF extra tests should be run (developers only)... no
+checking whether documentation is to be installed... no
+checking whether Fortran compiler(s) should be tested during configure... yes
+checking whether configure should try to set compiler flags... yes
+checking whether FFIO will be used... no
+checking whether to skip C++, F77, or F90 APIs if compiler is broken... yes
+checking whether only the C library is desired... no
+checking whether examples should be built... yes
+checking whether F77 API is desired... no
+checking whether F90 API is desired... no
+checking whether fortran type sizes should be checked... yes
+checking whether C API is desired... yes
+checking where to get netCDF C-only library for separate fortran libraries... 
+checking whether CXX API is desired... no
+checking whether v2 netCDF API should be built... yes
+checking whether the ncgen/ncdump should be built... yes
+checking whether large file (> 2GB) tests should be run... no
+checking whether benchmaks should be run (experimental)... no
+checking whether extreme numbers should be used in tests... yes
+checking where to put large temp files if large file tests are run... .
+checking whether a win32 DLL is desired... no
+checking whether separate fortran libs are desired... no
+configure: finding C compiler
+checking for C compiler default output file name... a.out
+checking whether the C compiler works... yes
+checking whether we are cross compiling... no
+checking for suffix of executables... 
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether clang accepts -g... yes
+checking for clang option to accept ISO C89... none needed
+checking for style of include used by make... GNU
+checking dependency style of clang... gcc3
+checking whether clang and cc understand -c and -o together... yes
+checking for an ANSI C-conforming const... yes
+configure: finding Fortran compiler (will not be used if Fortran API is not desired)
+checking for xlf90... no
+checking for fort... no
+checking for xlf95... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgf95... no
+checking for lf95... no
+checking for gfortran... gfortran
+checking whether we are using the GNU Fortran compiler... yes
+checking whether gfortran accepts -g... yes
+checking for xlf... no
+checking for fort... no
+checking for xlf95... no
+checking for ifort... no
+checking for ifc... no
+checking for efc... no
+checking for pgf77... no
+checking for lf95... no
+checking for gfortran... gfortran
+checking whether we are using the GNU Fortran 77 compiler... yes
+checking whether gfortran accepts -g... yes
+configure: finding C++ compiler (will not be used if C++ API is not desired)
+checking for cl... no
+checking for KCC... no
+checking for CC... no
+checking for cxx... no
+checking for cc++... no
+checking for xlC... no
+checking for aCC... no
+checking for c++... no
+checking for g++... no
+checking for egcs... no
+checking for gcc... gcc
+checking whether we are using the GNU C++ compiler... no
+checking whether gcc accepts -g... no
+checking dependency style of gcc... gcc3
+configure: setting up libtool
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by clang... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/bin/ld option to reload object files... -r
+checking how to recognize dependent libraries... pass_all
+checking for ar... ar
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from clang object... ok
+checking how to run the C preprocessor... clang -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking for dlfcn.h... yes
+checking whether we are using the GNU C++ compiler... (cached) no
+checking whether gcc accepts -g... (cached) no
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C++ preprocessor... /lib/cpp
+checking whether we are using the GNU Fortran 77 compiler... (cached) yes
+checking whether gfortran accepts -g... (cached) yes
+checking whether we are using the GNU Fortran compiler... (cached) yes
+checking whether gfortran accepts -g... (cached) yes
+checking for objdir... .libs
+checking if clang supports -fno-rtti -fno-exceptions... yes
+checking for clang option to produce PIC... -fPIC -DPIC
+checking if clang PIC flag -fPIC -DPIC works... yes
+checking if clang static flag -static works... yes
+checking if clang supports -c -o file.o... yes
+checking if clang supports -c -o file.o... (cached) yes
+checking whether the clang linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+libtool.m4: error: problem compiling CXX test program
+checking for gcc option to produce PIC...  -DPIC
+checking if gcc PIC flag  -DPIC works... no
+checking if gcc static flag  works... no
+checking if gcc supports -c -o file.o... no
+checking if gcc supports -c -o file.o... (cached) no
+checking whether the gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... unsupported
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for gfortran option to produce PIC... -fPIC
+checking if gfortran PIC flag -fPIC works... yes
+checking if gfortran static flag -static works... yes
+checking if gfortran supports -c -o file.o... yes
+checking if gfortran supports -c -o file.o... (cached) yes
+checking whether the gfortran linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for gfortran option to produce PIC... -fPIC
+checking if gfortran PIC flag -fPIC works... yes
+checking if gfortran static flag -static works... yes
+checking if gfortran supports -c -o file.o... yes
+checking if gfortran supports -c -o file.o... (cached) yes
+checking whether the gfortran linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+configure: finding other utilities
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: trying to set flags for this platform
+checking if _HPUX_SOURCE should be set... no
+checking if Solaris -Xa option is needed... CFLAGS=-g -O2
+checking if we need to set _LARGE_FILES despite results of previous tests... _LARGE_FILES=
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+configure: displaying some results
+checking CPPFLAGS... 
+checking CC CFLAGS... clang -g -O2
+checking type clang... clang is /usr/bin/clang
+checking CXX... gcc
+checking CXXFLAGS... 
+checking type gcc... gcc is /usr/bin/gcc
+checking FC... gfortran
+checking FFLAGS... -g -O2
+checking type gfortran... gfortran is /usr/bin/gfortran
+checking F90... unset
+checking AR... ar
+checking AR_FLAGS... cru
+checking type ar... ar is /usr/bin/ar
+checking NM... /usr/bin/nm -B
+checking NMFLAGS... 
+configure: checking types, headers, and functions
+checking for stdlib.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for stdbool.h that conforms to C99... yes
+checking for _Bool... yes
+checking for strlcat... no
+checking for strerror... yes
+checking for working alloca.h... yes
+checking for alloca... yes
+checking whether isnan is declared... yes
+checking whether isinf is declared... yes
+checking whether isfinite is declared... yes
+checking whether signbit is declared... yes
+checking for struct stat.st_blksize... yes
+checking for IEEE floating point format... yes
+checking for size_t... yes
+checking for off_t... yes
+checking for ssize_t... yes
+checking for ptrdiff_t... yes
+checking for uchar... no
+checking whether char is unsigned... no
+checking whether byte ordering is bigendian... universal
+checking size of short... 2
+checking size of int... 4
+checking size of long... 8
+checking size of float... 4
+checking size of double... 8
+checking size of off_t... 8
+checking size of size_t... 8
+checking for manual-page index command... 
+checking what to call the output of the ftpbin target... binary-netcdf-3.6.3_nc3.tar gfortran gcc
+checking binary distribution directory... /home/ftp/pub/binary/dummy_system
+checking for gawk... (cached) gawk
+checking for flex... flex
+checking lex output file root... lex.yy
+checking lex library... -lfl
+checking whether yytext is a pointer... yes
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+configure: generating header files and makefiles
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating man/Makefile
+config.status: creating man4/Makefile
+config.status: creating fortran/Makefile
+config.status: creating libsrc/Makefile
+config.status: creating libsrc4/Makefile
+config.status: creating nctest/Makefile
+config.status: creating nc_test4/Makefile
+config.status: creating nc_test/Makefile
+config.status: creating ncdump/Makefile
+config.status: creating ncgen/Makefile
+config.status: creating nf_test/Makefile
+config.status: creating cxx/Makefile
+config.status: creating cxx4/Makefile
+config.status: creating f90/Makefile
+config.status: creating examples/Makefile
+config.status: creating examples/C/Makefile
+config.status: creating examples/CDL/Makefile
+config.status: creating examples/CXX/Makefile
+config.status: creating examples/CXX4/Makefile
+config.status: creating examples/F90/Makefile
+config.status: creating examples/F77/Makefile
+config.status: creating win32/Makefile
+config.status: creating win32/NET/Makefile
+config.status: creating win32/NET/libsrc/Makefile
+config.status: creating win32/NET/ncdump/Makefile
+config.status: creating win32/NET/ncgen/Makefile
+config.status: creating win32/NET/examples/Makefile
+config.status: creating win32/NET/nctest/Makefile
+config.status: creating win32/NET/nc_test/Makefile
+config.status: creating config.h
+config.status: creating fortran/nfconfig1.inc
+config.status: executing depfiles commands
+config.status: executing libtool commands

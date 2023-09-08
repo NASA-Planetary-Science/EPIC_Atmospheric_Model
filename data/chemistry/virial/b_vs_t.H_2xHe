@@ -1,0 +1,31 @@
+ 2nd virial mixture coefficient: hydrogen plus helium, H_2+He.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using Tables 5,4,7,1. 
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 22
+       14.       -38.          1.
+       15.       -33.          1.
+       16.       -28.          1.
+       17.       -25.          1.
+       18.       -22.          1.
+       19.       -19.          1.
+       20.       -17.          1.
+       21.       -15.          1.
+       90.        12.8         3.
+      148.15      15.92        1.
+      173.15      16.20        1.
+      198.15      16.43        1.
+      223.15      16.20        1.
+      248.15      16.43        1.
+      273.15      16.37        1.
+      298.15      16.01        1.
+      323.15      15.82        1.
+      348.2       15.2         1.
+      373.6       15.6         1.
+      398.6       14.4         1.
+      423.5       15.8         1.
+      448.2       14.6         1.
+      
+

@@ -1,0 +1,24 @@
+ 2nd virial coefficient: methane, CH_4.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using the provided smooth fit to all the data.
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 16
+      110.      -330.         10.
+      120.      -273.          5.
+      130.      -235.          5.
+      140.      -207.          3.
+      150.      -182.          3.
+      160.      -161.          3.
+      180.      -129.          2.
+      200.      -105.          2.
+      225.       -83.          2.
+      250.       -66.          1.
+      275.       -53.          1.
+      300.       -42.          1.
+      350.       -26.          1.
+      400.       -15.          1.
+      500.        -0.5         1.
+      600.         8.5         1.
+      

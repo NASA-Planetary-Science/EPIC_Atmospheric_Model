@@ -1,0 +1,22 @@
+Return-Path: gierasch@astrosun.tn.cornell.edu
+Received: from itchy.tn.cornell.edu (ITCHY.TN.CORNELL.EDU [128.84.242.40]) by astrosun (8.6.12/8.6.12) with ESMTP id PAA14758 for <dowling@flolab.mit.edu>; Thu, 14 Dec 1995 15:27:00 -0500
+Received: (gierasch@localhost) by itchy.tn.cornell.edu (8.6.12/8.6.12) id PAA17623; Thu, 14 Dec 1995 15:26:57 -0500
+Date: Thu, 14 Dec 1995 15:25:15 -0500 (EST)
+From: Peter Gierasch <gierasch@astrosun.tn.cornell.edu>
+Subject: Re: Catch-22?
+To: dowling
+In-Reply-To: <9512141828.AA03292@flolab.mit.edu>
+Message-Id: <Pine.3.87.9512141515.A17573-0100000@itchy>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+
+Hi Tim,
+
+I sent you a couple of data files and enough lines of code to 
+show what the numbers are.  Sorry about the crazy units in lat 
+and height.  These are Neptune upper troposphere fp and T, 
+from the Neptune north south map Voyager sequences.
+
+Peter
+
+

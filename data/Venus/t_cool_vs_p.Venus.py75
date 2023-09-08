@@ -1,0 +1,25 @@
+Venus radiative time constant calculated by Pollack & Young (1975, JAS 32, 1025-37).
+Converted from height to pressure using Tables AI and AII (0 to 30deg) in the 
+Venus I book (Hunten, Colin, Donahue & Moroz 1983).
+Bottom point extrapolated in log p.
+.
+# p[mbar]   dummy  t_cool [s]
+18
+     4.47     0    1.57E+05
+     7.679    0    1.57E+05
+    21.517    0    8.79E+05
+    57.01     0    5.36E+05
+   140.27     0    3.74E+06
+   344.89     0    1.66E+07
+   736.65     0    3.96E+07
+  1421.03     0    7.09E+07
+  2577.73     0    1.13E+08
+  4480.55     0    1.78E+08
+  7446.6      0    2.59E+08
+ 11864.0      0    3.77E+08
+ 18229.4      0    5.21E+08
+ 27214.5      0    7.23E+08
+ 39522.0      0    9.56E+08
+ 56298.3      0    1.28E+09
+ 78502.9      0    1.65E+09
+ 92100.0      0    1.83E+09

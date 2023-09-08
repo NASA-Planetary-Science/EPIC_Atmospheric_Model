@@ -1,0 +1,32 @@
+Values of Enthalpy for Phases: Ammonia (NH_3)
+         2002-03. C.J.Palotai  *A*
+From: # Perry's Chemical Engineers' Handbook 7th Ed., pg. 2-214
+        & www.engineeringtoolbox.com
+
+T(K)     hi(kJ/kg)   hf(kJ/kg)     hg(kJ/kg)
+23 
+ 195.5   -1449.1     -1110.1        380.1
+ 200        NaN      -1088.8        388.5
+ 210        NaN      -1044.1        406.7
+ 220        NaN      -1000.6        424.1
+ 230        NaN       -957.0        440.7
+ 240        NaN       -912.9        456.2
+ 250        NaN       -868.2        470.6
+ 260        NaN       -823.1        483.8
+ 270        NaN       -777.3        495.6
+ 280        NaN       -730.9        506.0
+ 290        NaN       -683.8        514.7
+ 300        NaN       -636.0        521.5
+ 310        NaN       -587.2        526.1
+ 320        NaN       -537.5        528.2
+ 330        NaN       -486.7        527.5
+ 340        NaN       -434.3        523.3
+ 350        NaN       -380.0        515.1
+ 360        NaN       -323.2        501.8
+ 370        NaN       -262.6        481.9
+ 380        NaN       -196.5        452.7
+ 390        NaN       -120.9        408.1
+ 400        NaN        -23.5        329.0
+ 405.4      NaN        142.7        142.7
+
+  

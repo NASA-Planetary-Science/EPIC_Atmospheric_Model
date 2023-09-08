@@ -1,0 +1,23 @@
+ 2nd virial coefficient: molecular nitrogen, N_2.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using the recommended values.
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 14
+       75.      -275.          8.
+       80.      -243.          7.
+       90.      -197.          5.
+      100.      -160.          3.
+      110.      -132.          2.
+      125.      -104.          2.
+      150.       -71.5         2.
+      200.       -35.2         1.
+      250.       -16.2         1.
+      300.        -4.2         0.5
+      400.         9.0         0.5
+      500.        16.9         0.5
+      600.        21.3         0.5
+      700.        24.0         0.5
+    
+      

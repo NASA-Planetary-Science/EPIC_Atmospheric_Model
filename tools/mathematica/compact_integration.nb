@@ -1,0 +1,575 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     16615,        565]
+NotebookOptionsPosition[     15388,        516]
+NotebookOutlinePosition[     15744,        532]
+CellTagsIndexPosition[     15701,        529]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"mat1", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", 
+      RowBox[{"-", "dx21"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], "dx10"}], ",", "0", ",", 
+      RowBox[{"2", "dx21"}], ",", 
+      RowBox[{"2", "dx31"}], ",", "0", ",", 
+      RowBox[{"-", 
+       RowBox[{"dx21", "^", "2"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"3", 
+       RowBox[{"dx10", "^", "2"}]}], ",", "0", ",", 
+      RowBox[{"3", 
+       RowBox[{"dx21", "^", "2"}]}], ",", 
+      RowBox[{"3", 
+       RowBox[{"dx31", "^", "2"}]}], ",", "0", ",", 
+      RowBox[{"-", 
+       RowBox[{"dx21", "^", "3"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "4"}], 
+       RowBox[{"dx10", "^", "3"}]}], ",", "0", ",", 
+      RowBox[{"4", 
+       RowBox[{"dx21", "^", "3"}]}], ",", 
+      RowBox[{"4", 
+       RowBox[{"dx31", "^", "3"}]}], ",", "0", ",", 
+      RowBox[{"-", 
+       RowBox[{"dx21", "^", "4"}]}]}], "}"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", 
+     RowBox[{"-", "dx21"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "dx10"}], ",", "0", ",", 
+     RowBox[{"2", " ", "dx21"}], ",", 
+     RowBox[{"2", " ", "dx31"}], ",", "0", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["dx21", "2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx10", "2"]}], ",", "0", ",", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx21", "2"]}], ",", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx31", "2"]}], ",", "0", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["dx21", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "4"}], " ", 
+      SuperscriptBox["dx10", "3"]}], ",", "0", ",", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["dx21", "3"]}], ",", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["dx31", "3"]}], ",", "0", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["dx21", "4"]}]}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A1", " ", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "a10", ",", "a11", ",", "a12", ",", "a13", ",", "b11", ",", "b12"}], 
+   "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a10", ",", "a11", ",", "a12", ",", "a13", ",", "b11", ",", "b12"}],
+   "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"r", "=", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], 
+   "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], 
+  "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mat1", ".", "A1"}], " ", "==", " ", "r"}], ",", "A1"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"b11", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["1", "dx21"]}]}], ",", 
+    RowBox[{"a11", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"2", " ", "dx10", " ", "dx21"}], "+", 
+        SuperscriptBox["dx21", "2"], "-", 
+        RowBox[{"6", " ", "dx10", " ", "dx31"}], "-", 
+        RowBox[{"2", " ", "dx21", " ", "dx31"}]}], 
+       RowBox[{"12", " ", "dx10", " ", "dx31"}]]}]}], ",", 
+    RowBox[{"a10", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"-", 
+         SuperscriptBox["dx21", "3"]}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["dx21", "2"], " ", "dx31"}]}], 
+       RowBox[{"12", " ", "dx10", " ", 
+        RowBox[{"(", 
+         RowBox[{"dx10", "+", "dx21"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx10", "+", "dx31"}], ")"}]}]]}]}], ",", 
+    RowBox[{"a12", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "4"}], " ", "dx10", " ", "dx21"}], "-", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["dx21", "2"]}], "+", 
+        RowBox[{"6", " ", "dx10", " ", "dx31"}], "+", 
+        RowBox[{"4", " ", "dx21", " ", "dx31"}]}], 
+       RowBox[{"12", " ", 
+        RowBox[{"(", 
+         RowBox[{"dx10", "+", "dx21"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx21", "-", "dx31"}], ")"}]}]]}]}], ",", 
+    RowBox[{"a13", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["dx21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "dx10"}], "+", "dx21"}], ")"}]}], 
+      RowBox[{"12", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "-", "dx31"}], ")"}], " ", "dx31", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx10", "+", "dx31"}], ")"}]}]]}], ",", 
+    RowBox[{"b12", "\[Rule]", 
+     FractionBox["1", "dx21"]}]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"Simplify", "[", "%", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"b11", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["1", "dx21"]}]}], ",", 
+    RowBox[{"a11", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"2", " ", "dx10", " ", "dx21"}], "+", 
+        SuperscriptBox["dx21", "2"], "-", 
+        RowBox[{"6", " ", "dx10", " ", "dx31"}], "-", 
+        RowBox[{"2", " ", "dx21", " ", "dx31"}]}], 
+       RowBox[{"12", " ", "dx10", " ", "dx31"}]]}]}], ",", 
+    RowBox[{"a10", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["dx21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "-", 
+         RowBox[{"2", " ", "dx31"}]}], ")"}]}], 
+      RowBox[{"12", " ", "dx10", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx10", "+", "dx21"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx10", "+", "dx31"}], ")"}]}]]}], ",", 
+    RowBox[{"a12", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"4", " ", "dx10", " ", "dx21"}], "+", 
+       RowBox[{"3", " ", 
+        SuperscriptBox["dx21", "2"]}], "-", 
+       RowBox[{"6", " ", "dx10", " ", "dx31"}], "-", 
+       RowBox[{"4", " ", "dx21", " ", "dx31"}]}], 
+      RowBox[{"12", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx10", "+", "dx21"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "-", "dx31"}], ")"}]}]]}], ",", 
+    RowBox[{"a13", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["dx21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"2", " ", "dx10"}], "+", "dx21"}], ")"}]}], 
+      RowBox[{"12", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "-", "dx31"}], ")"}], " ", "dx31", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx10", "+", "dx31"}], ")"}]}]]}], ",", 
+    RowBox[{"b12", "\[Rule]", 
+     FractionBox["1", "dx21"]}]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"mat2", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "dx21", ",", "0"}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], "dx20"}], ",", 
+      RowBox[{
+       RowBox[{"-", "2"}], "dx21"}], ",", "0", ",", 
+      RowBox[{"2", "dx32"}], ",", 
+      RowBox[{"-", 
+       RowBox[{"dx21", "^", "2"}]}], ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"3", 
+       RowBox[{"dx20", "^", "2"}]}], ",", 
+      RowBox[{"3", 
+       RowBox[{"dx21", "^", "2"}]}], ",", "0", ",", 
+      RowBox[{"3", 
+       RowBox[{"dx32", "^", "2"}]}], ",", 
+      RowBox[{"dx21", "^", "3"}], ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "4"}], 
+       RowBox[{"dx20", "^", "3"}]}], ",", 
+      RowBox[{
+       RowBox[{"-", "4"}], 
+       RowBox[{"dx21", "^", "3"}]}], ",", "0", ",", 
+      RowBox[{"4", 
+       RowBox[{"dx32", "^", "3"}]}], ",", 
+      RowBox[{"-", 
+       RowBox[{"dx21", "^", "4"}]}], ",", "0"}], "}"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "0", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "dx21", ",", "0"}], "}"}],
+    ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "dx20"}], ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "dx21"}], ",", "0", ",", 
+     RowBox[{"2", " ", "dx32"}], ",", 
+     RowBox[{"-", 
+      SuperscriptBox["dx21", "2"]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx20", "2"]}], ",", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx21", "2"]}], ",", "0", ",", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["dx32", "2"]}], ",", 
+     SuperscriptBox["dx21", "3"], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "4"}], " ", 
+      SuperscriptBox["dx20", "3"]}], ",", 
+     RowBox[{
+      RowBox[{"-", "4"}], " ", 
+      SuperscriptBox["dx21", "3"]}], ",", "0", ",", 
+     RowBox[{"4", " ", 
+      SuperscriptBox["dx32", "3"]}], ",", 
+     RowBox[{"-", 
+      SuperscriptBox["dx21", "4"]}], ",", "0"}], "}"}]}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A2", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "a20", ",", "a21", ",", "a22", ",", "a23", ",", "b21", ",", "b22"}], 
+   "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a20", ",", "a21", ",", "a22", ",", "a23", ",", "b21", ",", "b22"}],
+   "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mat2", ".", "A2"}], "\[Equal]", "r"}], ",", "A2"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"b22", "\[Rule]", 
+     FractionBox["1", "dx21"]}], ",", 
+    RowBox[{"a22", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", "2"}], " ", "dx20", " ", "dx21"}], "+", 
+        SuperscriptBox["dx21", "2"], "-", 
+        RowBox[{"6", " ", "dx20", " ", "dx32"}], "+", 
+        RowBox[{"2", " ", "dx21", " ", "dx32"}]}], 
+       RowBox[{"12", " ", "dx20", " ", "dx32"}]]}]}], ",", 
+    RowBox[{"a20", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["dx21", "3"], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox["dx21", "2"], " ", "dx32"}]}], 
+       RowBox[{"12", " ", "dx20", " ", 
+        RowBox[{"(", 
+         RowBox[{"dx20", "-", "dx21"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx20", "+", "dx32"}], ")"}]}]]}]}], ",", 
+    RowBox[{"a21", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"4", " ", "dx20", " ", "dx21"}], "-", 
+        RowBox[{"3", " ", 
+         SuperscriptBox["dx21", "2"]}], "+", 
+        RowBox[{"6", " ", "dx20", " ", "dx32"}], "-", 
+        RowBox[{"4", " ", "dx21", " ", "dx32"}]}], 
+       RowBox[{"12", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"-", "dx20"}], "+", "dx21"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx21", "+", "dx32"}], ")"}]}]]}]}], ",", 
+    RowBox[{"a23", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["dx21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], " ", "dx20"}], "+", "dx21"}], ")"}]}], 
+      RowBox[{"12", " ", "dx32", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx20", "+", "dx32"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "+", "dx32"}], ")"}]}]]}], ",", 
+    RowBox[{"b21", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["1", "dx21"]}]}]}], "}"}], "}"}]], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"b22", "\[Rule]", 
+     FractionBox["1", "dx21"]}], ",", 
+    RowBox[{"a22", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "dx21"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx21", "+", 
+          RowBox[{"2", " ", "dx32"}]}], ")"}]}], "+", 
+       RowBox[{"2", " ", "dx20", " ", 
+        RowBox[{"(", 
+         RowBox[{"dx21", "+", 
+          RowBox[{"3", " ", "dx32"}]}], ")"}]}]}], 
+      RowBox[{"12", " ", "dx20", " ", "dx32"}]]}], ",", 
+    RowBox[{"a20", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["dx21", "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx21", "+", 
+          RowBox[{"2", " ", "dx32"}]}], ")"}]}], 
+       RowBox[{"12", " ", "dx20", " ", 
+        RowBox[{"(", 
+         RowBox[{"dx20", "-", "dx21"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"dx20", "+", "dx32"}], ")"}]}]]}]}], ",", 
+    RowBox[{"a21", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"4", " ", "dx20", " ", "dx21"}], "-", 
+       RowBox[{"3", " ", 
+        SuperscriptBox["dx21", "2"]}], "+", 
+       RowBox[{"6", " ", "dx20", " ", "dx32"}], "-", 
+       RowBox[{"4", " ", "dx21", " ", "dx32"}]}], 
+      RowBox[{"12", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx20", "-", "dx21"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "+", "dx32"}], ")"}]}]]}], ",", 
+    RowBox[{"a23", "\[Rule]", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["dx21", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], " ", "dx20"}], "+", "dx21"}], ")"}]}], 
+      RowBox[{"12", " ", "dx32", " ", 
+       RowBox[{"(", 
+        RowBox[{"dx20", "+", "dx32"}], ")"}], " ", 
+       RowBox[{"(", 
+        RowBox[{"dx21", "+", "dx32"}], ")"}]}]]}], ",", 
+    RowBox[{"b21", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["1", "dx21"]}]}]}], "}"}], "}"}]], "Output"]
+}, Open  ]]
+},
+WindowSize->{767, 825},
+WindowMargins->{{270, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 6, \
+2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 1367, 42, 58, "Input"],
+Cell[1949, 66, 1346, 41, 73, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3332, 112, 162, 5, 27, "Input"],
+Cell[3497, 119, 128, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3662, 127, 140, 4, 27, "Input"],
+Cell[3805, 133, 116, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3958, 141, 149, 5, 27, "Input"],
+Cell[4110, 148, 1947, 57, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6094, 210, 97, 2, 43, "Input"],
+Cell[6194, 214, 1852, 54, 134, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8083, 273, 1364, 43, 58, "Input"],
+Cell[9450, 318, 1351, 42, 73, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10838, 365, 157, 5, 27, "Input"],
+Cell[10998, 372, 128, 3, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11163, 380, 145, 5, 27, "Input"],
+Cell[11311, 387, 1974, 58, 176, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13322, 450, 61, 1, 27, "Input"],
+Cell[13386, 453, 1986, 60, 130, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

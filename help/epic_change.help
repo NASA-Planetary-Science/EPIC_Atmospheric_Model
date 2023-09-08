@@ -1,0 +1,78 @@
+ 
+ Name 
+   change - modify an epic.nc (netCDF format) file 
+
+ Syntax
+   change [ options ]  
+
+ Description 
+   Reads infile (netCDF format) and prompts 
+   the user for changes. Options are listed below. 
+
+ Options 
+
+   -help or -h      Write this message. 
+
+   -spots filename  Specifies file to be the name of a file containing the 
+                    locations and sizes of vortices (spots) to be added 
+                    to the model. Eight parameters are needed for each
+                    vortex: lon[deg],lat[deg] and press[hPa] specify 
+                    the desired location of the center of the vortex; 
+                    a[deg], b[deg], c_up[scale_hts], and c_down[scale_hts]
+                    specify the desired ellipsoidal semi-major axes,
+                    where "c" can be different above and below the given
+                    pressure, and amp[m/s] specifies the velocity scale
+                    (positive for anticyclones, negative for cyclones).
+                    Latitude is planetographic, and "scale_hts" refers 
+                    to pressure scale heights.  Can be used in combination
+                    with -waves.
+
+   -waves filename  Specifies filename to be the name of a file containing the
+                    locations and attributes of waves to be added to the model.
+                    Six parameters are needed for each wave: lat[deg],amp[],wn[],
+                    p[hPa],c[scale_hts],fwhm[deg]. The amplitude, amp, is in
+                    SI units for the streamfunction [m2/s2] (MONT or PHI, depending on
+                    the vertical coordinate). The wavenumber, wn, is the number of waves in the domain (not
+                    the 360-degree planetary wavenumber). The full-width half-maximum
+                    in latitude is fwhm. Each wave is introduced with a random zonal phase offset.
+                    Can be used in combination with -spots.
+
+   -stretch_ni ni   Stretch a 2D model with ni = 1 into a 3D model with ni
+                    as given, assuming zonal symmetry. The new value of ni
+                    must be a power of 2.  The range of longitude (lonbot,lontop)
+                    is not changed, so it should be set as desired when creating
+                    the original 2D model.
+
+ Examples
+
+ 1. To add vortices to epic.nc using the description file
+    spots.dat, type the following and then answer the 
+    ensuing prompts:
+
+    %change -spots spots.dat 
+
+    An example spots.dat file:
+---------------------------------------------------------------------------------------
+ Number of vortices: 2
+ lon[deg] lat[deg] press[hPa]  a[deg] b[deg] c_up[scale_hts] c_down[scale_hts] amp[m/s]
+   30.      -33.     680.       3.0    2.5        2.5               3.0          100.
+   60.      -33.5    680.       3.0    2.5        2.5               3.0          100.
+---------------------------------------------------------------------------------------
+
+ 2. To add waves, type
+    %change -waves waves.dat
+
+    An example waves.dat file:
+---------------------------------------------------------
+ Number of waves: 2
+ lat[deg]  amp[m2s-2]  wn[]  p[hPa]  c[sc_ht ]  fwhm[deg]
+  30.0      0.02       1.0   700.0      1.5       1.50
+  40.0      0.10       5.0   700.0      1.5       3.00
+---------------------------------------------------------
+
+    
+
+
+  3. If you have an ni = 1 model, you may stretch it, for example into an ni = 128 model:
+
+     %change -stretch_ni 128

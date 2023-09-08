@@ -1,0 +1,23 @@
+Values of Enthalpy for Phases: Carbon Dioxide (CO_2)
+         2002. C.J.Palotai
+From: # Perry's Chemical Engineers' Handbook
+        7th Edition, pg. 2-224
+
+T(K)    hi(kJ/kg)   hf(kJ/kg)     hg(kJ/kg)
+16
+ 216.6    NaN        386.3       731.5
+ 220      NaN        392.6       733.1
+ 225      NaN        401.8       735.1
+ 230      NaN        411.1       736.7
+ 235      NaN        420.5       737.9
+ 240      NaN        430.2       738.9
+ 245      NaN        440.1       739.4
+ 250      NaN        450.3       739.6
+ 255      NaN        460.8       739.4
+ 260      NaN        471.6       738.7
+ 270      NaN        494.4       735.6
+ 275      NaN        506.5       732.8
+ 280      NaN        519.2       729.1
+ 290      NaN        547.6       716.9
+ 300      NaN        585.4       690.2
+ 304.2    NaN        636.6       636.6 

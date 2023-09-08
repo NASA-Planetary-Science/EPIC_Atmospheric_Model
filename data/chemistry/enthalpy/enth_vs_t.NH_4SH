@@ -1,0 +1,11 @@
+Values of Enthalpy of Phases for ammonium hydrosulfide (NH_4SH)
+From: Dummy data file.  Need these data.
+Note: 8/19/2004 CJP Solid NH_4SH forms from gas_NH_3 and gas_H_2S
+      so latent heat needs to be defined in a different way
+
+T (K)     hi(kJ/kg)  hf(kJ/kg) hg(kJ/kg)
+3
+ 100.      NaN         NaN       NaN
+ 200.      NaN         NaN       NaN
+ 300.      NaN         NaN       NaN
+

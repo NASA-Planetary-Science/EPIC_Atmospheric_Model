@@ -1,0 +1,31 @@
+ Mars temperature and pressure profile.
+ From LMD Mars Climate Database
+ http://johnson.lmd.jussieu.fr:8080/las/servlets/dataset?catitem=327
+ hellasm3 = Hellas Basin (42.7S, 70.0E), month 3
+ Extended above p = 0.01 hPa assuming isothermal atmosphere (need a real profile).
+#   p[hPa]        T[K]    dT[K]
+24
+    0.00125       145.4     0.
+    0.0025        145.4     0.
+    0.005         145.4     0.
+    0.01          145.4     0.
+    0.02          143.4     0.
+    0.04          143.6     0.
+    0.08          146.7     0.
+    0.13          151.9     0.
+    0.21          157.7     0.
+    0.35          163.4     0.
+    0.55          169.0     0.
+    0.86          174.5     0.
+    1.07          177.2     0.
+    1.33          178.4     0.
+    1.65          179.5     0.
+    2.04          180.5     0.
+    2.54          179.9     0.
+    3.15          179.2     0.
+    3.91          178.0     0.
+    4.87          176.2     0.
+    6.08          174.2     0.
+    7.59          171.8     0.
+    9.54	  167.3     0.
+    12.05	  163.6     0.

@@ -1,0 +1,113 @@
+PDS_VERSION_ID                     = PDS3
+
+/* FILE CHARACTERISTICS DATA ELEMENTS */
+RECORD_TYPE                        = FIXED_LENGTH
+RECORD_BYTES                       = 52
+FILE_RECORDS                       = 1816
+
+/* DATA OBJECT POINTER IDENTIFICATION ELEMENTS */
+^TABLE                             = "HASI_L4_ATMO_PROFILE_DESCEN.TAB"
+
+/* INSTRUMENT AND DETECTOR DESCRIPTIVE DATA ELEMENTS */
+FILE_NAME                          = "HASI_L4_ATMO_PROFILE_DESCEN.TAB"
+DATA_SET_ID                        = "HP-SSA-HASI-2-3-4-MISSION-V1.1"
+DATA_SET_NAME                      = "HUYGENS HASI MISSION RAW AND CALIBRATED DATA V1.1"
+PRODUCT_ID                         = "HASI_L4_ATMO_PROFILE_DESCEN"
+PRODUCT_NAME                       = "HASI_L4_ATMO_PROFILE_DESCEN.TAB"
+MISSION_NAME                       = "CASSINI-HUYGENS"
+INSTRUMENT_HOST_NAME               = "HUYGENS PROBE"
+INSTRUMENT_HOST_ID                 = HP
+MISSION_PHASE_NAME                 = "DESCENT"
+PRODUCT_TYPE                       = EDR
+START_TIME                         = 2005-01-14T09:11:21.373
+STOP_TIME                          = 2005-01-14T11:38:10.457
+SPACECRAFT_CLOCK_START_COUNT       = " 00:01:00.545"    /* DDB time in HH:MM:SS.MS  ('-' for preT0) */
+SPACECRAFT_CLOCK_STOP_COUNT        = " 02:27:49.629"
+NATIVE_START_TIME                  =      60545    /* Elapsed time from T0 in milliseconds ('-' for preT0) */
+NATIVE_STOP_TIME                   =    8869629
+PRODUCT_CREATION_TIME              = 2006-08-31T15:35:08.000
+
+PRODUCER_ID                        = "HASI_TEAM"
+PRODUCER_FULL_NAME                 = "ABOUDAN ALESSIO"
+PRODUCER_INSTITUTION_NAME          = "CISAS-UPD"
+TARGET_NAME                        = "TITAN"
+
+/* INSTRUMENT DESCRIPTION */
+INSTRUMENT_ID                      = "HASI"
+INSTRUMENT_NAME                    = "HUYGENS ATMOSPHERIC STRUCTURE INSTRUMENT"
+INSTRUMENT_TYPE                    = {"ACCELEROMETER", "THERMOMETER", "BAROMETER"}
+
+DATA_QUALITY_ID                    = 1
+DATA_QUALITY_DESC                  = "1 = high quality ... 5 = low quality"
+
+INSTRUMENT_MODE_ID                 = "DESCENT"
+
+/* DATA OBJECT DEFINITION */
+OBJECT                             = TABLE
+ INTERCHANGE_FORMAT                = ASCII
+ ROWS                              = 1816
+ COLUMNS                           = 5
+ ROW_BYTES                         = 52
+ DESCRIPTION                       = "Atmospheric vertical profile of pressure, temperature and density during descent"
+
+ OBJECT                           = COLUMN
+  COLUMN_NUMBER                   = 1
+  NAME                            = "Time"
+  UNIT                            = "Milliseconds"
+  DATA_TYPE                       = ASCII_INTEGER
+  START_BYTE                      = 1
+  BYTES                           = 8
+  FORMAT                          = "I8"
+  DESCRIPTION                     = "NULL"
+ END_OBJECT                       = COLUMN
+
+
+ OBJECT                           = COLUMN
+  COLUMN_NUMBER                   = 2
+  NAME                            = "Altitude"
+  UNIT                            = "m"
+  DATA_TYPE                       = ASCII_REAL
+  START_BYTE                      = 10
+  BYTES                           = 9
+  FORMAT                          = "F9.1"
+  DESCRIPTION                     = "NULL"
+ END_OBJECT                       = COLUMN
+
+
+ OBJECT                           = COLUMN
+  COLUMN_NUMBER                   = 3
+  NAME                            = "Pressure"
+  UNIT                            = "Pa"
+  DATA_TYPE                       = ASCII_REAL
+  START_BYTE                      = 20
+  BYTES                           = 10
+  FORMAT                          = "F10.5"
+  DESCRIPTION                     = "NULL"
+ END_OBJECT                       = COLUMN
+
+
+ OBJECT                           = COLUMN
+  COLUMN_NUMBER                   = 4
+  NAME                            = "Temperature"
+  UNIT                            = "K"
+  DATA_TYPE                       = ASCII_REAL
+  START_BYTE                      = 31
+  BYTES                           = 9
+  FORMAT                          = "F9.4"
+  DESCRIPTION                     = "NULL"
+ END_OBJECT                       = COLUMN
+
+
+ OBJECT                           = COLUMN
+  COLUMN_NUMBER                   = 5
+  NAME                            = "Density"
+  UNIT                            = "kg/m^3"
+  DATA_TYPE                       = ASCII_REAL
+  START_BYTE                      = 41
+  BYTES                           = 10
+  FORMAT                          = "F10.7"
+  DESCRIPTION                     = "NULL"
+ END_OBJECT                       = COLUMN
+
+END_OBJECT                         = TABLE
+END

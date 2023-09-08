@@ -1,0 +1,13 @@
+prefix=/home/dowling/epic/netcdf
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib64
+includedir=${prefix}/include
+ccompiler=clang
+
+Name: netcdf-c
+Description: NetCDF Client Library for C
+URL: http://www.unidata.ucar.edu/netcdf
+Version: 4.7.0
+Libs: -L${libdir} -lnetcdf
+Libs.private: -lhdf5_hl -lhdf5 -lm -ldl -lz -lcurl 
+Cflags: -I${includedir}

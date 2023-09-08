@@ -1,0 +1,29 @@
+Values of Enthalpy for Phases: Methane (CH_4)
+         2002. C.J.Palotai
+From: # Perry's Chemical Engineers' Handbook
+        7th Edition, pg. 2-251
+
+T(K)   hi(kJ/kg)  hf(kJ/kg)   hg(kJ/kg)
+22
+  90.7   NaN       216.7      759.9
+  95     NaN       232.5      769.0
+ 100     NaN       246.3      776.9
+ 105     NaN       263.2      785.7
+ 110     NaN       280.1      794.5
+ 115     NaN       297.7      802.5
+ 120     NaN       315.3      810.4
+ 125     NaN       333.5      817.3
+ 130     NaN       351.7      824.1
+ 135     NaN       370.6      829.5
+ 140     NaN       389.5      834.8
+ 145     NaN       409.5      844.4
+ 150     NaN       429.4      853.9
+ 155     NaN       450.8      848.5
+ 160     NaN       472.1      843.0
+ 165     NaN       495.4      840.0
+ 170     NaN       518.6      837.0
+ 175     NaN       545.8      827.6
+ 180     NaN       572.9      818.1
+ 185     NaN       605.4      797.7
+ 190     NaN       661.6      750.7
+ 190.6   NaN       704.4      704.4

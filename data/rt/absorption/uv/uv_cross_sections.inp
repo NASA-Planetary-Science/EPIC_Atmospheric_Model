@@ -1,0 +1,92 @@
+ Ultraviolet photoabsorption cross sections, as used by
+   Moses JI, Bezard B, Lellouch E, Gladstone GR, Feuchtgruber H,
+     Allen M, 2000, Photochemistry of Saturn's Atmosphere,
+     Icarus 143, 244-298.
+ These are relatively low-resolution cross sections, on a 
+ wavelength grid originally developed by Y. Yung.  The 
+ wavelength intervals are
+
+   1000:    990.0-1010.0 A
+   1020:   1010.0-1030.0 A (minus the Lyman beta line)
+   1025.7: 1025.2-1026.2 A (solar H Lyman beta line)
+   1035:   1030.0-1047.5 A
+   1060:   1047.5-1085.0 A
+   1110:   1085.0-1132.5 A
+   1155:   1132.5-1172.5 A
+   1190:   1172.5-1200.0 A
+   1210:   1200.0-1225.0 A (minus the Ly alpha line)
+   1215.7: 1215.2-1216.2 A (solar Lyman alpha line; lots of flux)
+   1250:   1225.0-1275.0 A
+   1300:   1275.0-1325.0 A
+   1350:   1325.0-1375.0 A
+   1400:   1375.0-1425.0 A
+   (The rest are like the last few, with wavelength being the
+   center of a 50-A wide swath.)
+
+ The CH4 cross sections are a compilation of
+   Backx C, Wight GR, Tol RR, Van der Wiel MJ, 1975, Electron-electron
+     coincidence measurements of CH_4, J. Phys. B: Atom. Molec. Phys.
+     8, 3007-3019.
+   Lee LC, Chiang CC, 1983, Fluorescence yield from photodissociation
+     of CH_4 at 1060-1420 A, J. Chem. Phys. 78, 688-691.
+   Mount GH, Warden ES, Moos HW, 1977, Photoabsorption cross sections
+     of methane from 1400 to 1850 A, Astrophys. J. 214, L47-L49.
+   Mount GH, Moos HW, 1978, Photoabsorption cross sections of methane
+     and ethane, Astrophys. J. 224, L35-L38.
+
+ The C2H2 cross sections are T = 150 K data from
+   Wu CYR, Chen FZ, Judge DL,2001, Measurements of temperature-dependent
+     absorption cross sections of C2H2 in the VUV-UV region, J. Geophys.
+     Res. 106, 7629-7636.
+
+ The C2H4 cross sections are low-temperature data from the following
+ (and references therein)
+   Holland DMP, Shaw DA, Hayes MA, Shpinkova LG, Rennie EE, Karlson L,
+   Baltzer P, Wannberg B, 1997, A photoabsorption, photodissociation
+   and photoelectron spectroscopy study of C2H4 and C2D4, Chem. Phys.
+   219, 91-116.
+
+ The C2H6 cross sections are from
+   Mount GH, Moos HW, 1978, Photoabsorption cross sections of methane
+     and ethane, 1978, Astrophys. J. 224, L35-L38.
+   Calvert and Pitts,1966, Photochemistry, Wiley, NY.
+
+ Wav:  Wavelength [angstrom]
+ CH4:  Cross section for methane [cm^2]
+ C2H2: Cross section for acetylene [cm^2]
+ C2H4: Cross section for ethylene [cm^2]
+ C2H6: Cross section for ethane [cm^2]
+ No. rows: 32
+ Wav     CH4       C2H2      C2H4      C2H6
+ 1000.0  3.90e-17  2.47e-17  4.91e-17  4.98e-17
+ 1020.0  3.51e-17  2.37e-17  4.64e-17  4.90e-17
+ 1025.7  3.43e-17  2.35e-17  4.45e-17  4.84e-17
+ 1035.0  3.28e-17  2.36e-17  4.28e-17  4.79e-17
+ 1060.0  2.51e-17  2.37e-17  3.45e-17  4.55e-17
+ 1110.0  1.80e-17  2.91e-17  1.84e-17  1.70e-17
+ 1155.0  1.75e-17  2.56e-17  1.65e-17  1.31e-17
+ 1190.0  1.95e-17  2.65e-17  2.06e-17  1.05e-17
+ 1210.0  1.90e-17  3.79e-17  2.26e-17  2.20e-17
+ 1215.7  1.90e-17  2.00e-17  2.30e-17  2.20e-17
+ 1250.0  1.90e-17  2.48e-17  2.80e-17  2.30e-17
+ 1300.0  1.70e-17  6.68e-17  1.80e-17  2.10e-17
+ 1350.0  6.50e-18  4.53e-17  2.00e-17  1.30e-17
+ 1400.0  9.20e-19  3.01e-18  1.30e-17  5.50e-18
+ 1450.0  2.20e-20  7.94e-18  1.10e-17  2.30e-18
+ 1500.0  8.90e-23  5.85e-17  1.80e-17  9.50e-19
+ 1550.0  0.0       1.81e-18  2.40e-17  8.00e-20
+ 1600.0  0.0       6.47e-19  3.00e-17  1.00e-21
+ 1650.0  0.0       9.82e-19  3.50e-17  0.0
+ 1700.0  0.0       1.10e-18  2.60e-17  0.0
+ 1750.0  0.0       1.07e-18  1.50e-17  0.0
+ 1800.0  0.0       6.95e-19  1.60e-18  0.0
+ 1850.0  0.0       2.98e-19  3.70e-19  0.0
+ 1900.0  0.0       1.40e-19  5.00e-20  0.0
+ 1950.0  0.0       1.03e-19  9.50e-21  0.0
+ 2000.0  0.0       5.93e-20  1.00e-21  0.0
+ 2050.0  0.0       2.54e-20  0.0       0.0
+ 2100.0  0.0       5.29e-21  0.0       0.0
+ 2150.0  0.0       2.15e-21  0.0       0.0
+ 2200.0  0.0       6.88e-22  0.0       0.0
+ 2250.0  0.0       1.87e-22  0.0       0.0
+ 2300.0  0.0       5.48e-23  0.0       0.0

@@ -1,0 +1,69 @@
+
+ Name 
+   epic, mpi_epic - run the EPIC model 
+
+ Syntax
+   epic [ options ] infile 
+
+ Description 
+   Reads infile (netCDF format) and any required radiative transfer data files, and integrates 
+   the primitive equations forward. 
+
+   Options are listed below. 
+
+ Tips
+   Put $EPIC_PATH/bin in your path. 
+
+   Create a subdirectory (folder) for each type of experiment,
+   outside of the $EPIC_PATH directory tree, and run the model
+   from that subdirectory. The files unique to your run will then
+   be separated from other runs, which will help with managing 
+   different projects, and you will be able to archive or recompile the model
+   without affecting runs.
+
+   To stop a run at the next scheduled save or backup, type 
+     %touch epic_stop
+   in the run directory. After the run stops, the file epic_stop is automatically deleted from the run directory.
+
+
+ Options 
+
+   -help or -h           Write this message. 
+
+   -itback n             Specifies n timesteps between writing backup 
+                         files (epic.nc format). The previous backup is 
+                         renamed epic_back2.nc and the current one is 
+                         named epic_back1.nc. They are written to the same 
+                         directory containing infile. The two are leapfrogged 
+                         to insure always having a good backup should a 
+                         write to disk fail. If -itextract is set but -itback
+                         is not, then -itback will default to the same interval
+                         as -itextract.
+ 
+   -itrun n              Specifies how many timesteps to run the model.
+   
+   -itsave n             Specifies n timesteps between writing full save 
+                         files (epic.nc format). These are labeled by the 
+                         model time and written to the same directory 
+                         containing infile. If not specified, the default
+                         is to save the last timestep of the run. 
+
+  -itextract n           Specifies n timesteps between writing selected
+                         variables to a file. The variables are 
+                         marked for extraction beforehand via the programs 
+                         initial or change. Tendency data are not written.   
+                         All data are appended to the single file extract.nc.
+
+
+  -append extract.nc     Specifies that extracts should be appended to an
+                         existing file of the given name, rather than starting
+                         a new extract file.
+              
+
+ Example 
+   To integrate the file epic.nc forward 10000 timesteps,
+   saving twice and extracting every 100, with runtime messages 
+   to be written to the file ``epic.log'', type: 
+
+   %epic -itrun 10000 -itsave 5000 -itextract 100 epic.nc >& epic.log & 
+

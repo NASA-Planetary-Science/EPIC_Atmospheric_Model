@@ -1,0 +1,15 @@
+ 2nd virial mixture coefficient: hydrogen plus methane, H_2+CH_4.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using Table 3. Errors are "Class I" = max(2%,1). 
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 6
+      144.3      -9.7          1.
+      172.0      -4.5          1.
+      199.8      -0.5          1.
+      227.6       2.7          1.
+      255.4       4.9          1.
+      283.2       7.5          1.
+      
+

@@ -1,0 +1,44 @@
+libvers.lo: libvers.c ../config.h netcdf.h \
+  /usr/lib64/clang/5.0.1/include/stddef.h \
+  /usr/lib64/clang/5.0.1/include/__stddef_max_align_t.h \
+  /usr/include/errno.h /usr/include/features.h \
+  /usr/include/stdc-predef.h /usr/include/sys/cdefs.h \
+  /usr/include/bits/wordsize.h /usr/include/bits/long-double.h \
+  /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+  /usr/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h
+
+../config.h:
+
+netcdf.h:
+
+/usr/lib64/clang/5.0.1/include/stddef.h:
+
+/usr/lib64/clang/5.0.1/include/__stddef_max_align_t.h:
+
+/usr/include/errno.h:
+
+/usr/include/features.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:

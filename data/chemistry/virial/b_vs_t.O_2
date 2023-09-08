@@ -1,0 +1,19 @@
+ 2nd virial coefficient: molecular oxygen, O_2.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using the recommended values.
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 11
+       90.      -241.         10.    
+      100.      -194.          7.
+      110.      -161.          7.
+      125.      -126.          5.
+      150.       -89.          3.
+      175.       -65.          3.
+      200.       -49.          2.
+      250.       -28.          2.
+      300.       -16.          1.
+      350.        -7.5         1.
+      400.        -1.          1.    
+      

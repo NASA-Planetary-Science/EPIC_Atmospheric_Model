@@ -1,0 +1,17 @@
+ 2nd virial coefficient: ammonia, NH_3.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using Tables 6,1. Default error is "Class I" = max(2%,1).
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 10
+      273.15    -345.          7.
+      298.      -262.          5.
+      313.      -226.          5.
+      333.      -194.          4.
+      363.      -157.          3.
+      392.      -130.          3.
+      433.      -101.          2.
+      473.       -81.          2.
+      523.       -64.          2.
+      573.15     -44.          2.

@@ -1,0 +1,384 @@
+epic_adjust.c:        tol = 1.e-4*planet->kinvisc;
+epic_change.c:  thermo_setup(planet,&planet->cpr);
+epic_change.c:   * NOTE: For planet->type "terrestrial" and grid.coord_type == COORD_ISENTROPIC,
+epic_change.c:            xi2          = gsg*planet->cp*log(THETA2(K,J,I))+(1.-gsg)*(-rgas*log(P2(K,J,I)));
+epic_change.c:            xi4          = gsg*planet->cp*log(THETA2(K+1,J,I))+(1.-gsg)*(-rgas*log(P2(K+1,J,I)));
+epic_change.c:            DTEMP(K,J,I)  = (PERT(K,J,I)-PERT(K+1,J,I))/(planet->cp*log(THETA(K,J,I)/THETA(K+1,J,I)));
+epic_change.c:            xi2          = gsg*planet->cp*log(THETA2(K,J,I))+(1.-gsg)*(-rgas*log(P2(K,J,I)));
+epic_change.c:            xi4          = gsg*planet->cp*log(THETA2(K+1,J,I))+(1.-gsg)*(-rgas*log(P2(K+1,J,I)));
+epic_change.c:            DTEMP(K,J,I)  = (PERT(K,J,I)-PERT(K+1,J,I))/(planet->cp*log(THETA(K,J,I)/THETA(K+1,J,I)));
+epic_flux.c:                                    *Q(is,ip,K-1,J,I)*PDRY3(K-1,J,I)/T3(K-1,J,I))/planet->rgas;
+epic_flux.c:                precip_density = Q(is,ip,K,J,I)*PDRY3(K,J,I)/(planet->rgas*T3(K,J,I));;
+epic_flux.c:              precip_density = Q(is,ip,K,J,I)*PDRY3(K,J,I)/(planet->rgas*T3(K,J,I));;
+epic_flux.c:              precip_density = Q(is,ip,K,J,I)*PDRY3(K,J,I)/(planet->rgas*T3(K,J,I));;
+epic_flux.c:      if (strcmp(planet->type,"gas-giant") == 0 || grid.coord_type == COORD_ISENTROPIC) {
+epic_flux.c:      else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_flux.c:        sprintf(Message,"unrecognized planet->type=%s",planet->type);
+epic_funcs_astron.c:  switch(planet->index) {
+epic_funcs_astron.c:      M = (planet->mean_lon-planet->lon_perihelion)+(360./planet->orbit_period)*(tJ2000/365.25);
+epic_funcs_astron.c:      E = eccentric_anomaly(M,planet->e);
+epic_funcs_astron.c:      nu = true_anomaly(E,planet->e);
+epic_funcs_astron.c:      l_s = nu-planet->vernal_equinox_anomaly;
+epic_funcs_astron.c:  dec_s = asin(sin(planet->obliquity*DEG)*sin(l_s*DEG))/DEG;
+epic_funcs_astron.c:  M = (planet->mean_lon-planet->lon_perihelion)+(360./planet->orbit_period)*(tJ2000/365.25);
+epic_funcs_astron.c:  l_s_mean = M-planet->vernal_equinox_anomaly;
+epic_funcs_astron.c:    alpha_s = atan(cos(planet->obliquity*DEG)*tan(l_s*DEG))/DEG;
+epic_funcs_astron.c:    alpha_s = atan(cos(planet->obliquity*DEG)*tan(l_s*DEG))/DEG+180.;
+epic_funcs_astron.c:    alpha_s = atan(cos(planet->obliquity*DEG)*tan(l_s*DEG))/DEG+360.;
+epic_funcs_astron.c:  west_lon = planet->wlon_noon_J2000+tJ2000*planet->omega_synodic/DEG;
+epic_funcs_astron.c:  M = (planet->mean_lon-planet->lon_perihelion)+(360./planet->orbit_period)*(tJ2000/365.25);
+epic_funcs_astron.c:  E = eccentric_anomaly(M,planet->e);
+epic_funcs_astron.c:  return  planet->a*(1.-planet->e*cos(E*DEG));
+epic_funcs_diag.c:  switch(planet->index) {
+epic_funcs_diag.c:      planet->u = u_venus;
+epic_funcs_diag.c:      planet->u = u_earth;
+epic_funcs_diag.c:      planet->u = u_mars;
+epic_funcs_diag.c:      planet->u = u_jupiter;
+epic_funcs_diag.c:      planet->u = u_saturn;
+epic_funcs_diag.c:      planet->u = u_titan;
+epic_funcs_diag.c:      planet->u = u_uranus;
+epic_funcs_diag.c:      planet->u = u_neptune;
+epic_funcs_diag.c:      planet->u = u_triton;
+epic_funcs_diag.c:      planet->u = u_pluto;
+epic_funcs_diag.c:      planet->u = u_hot_jupiter;
+epic_funcs_diag.c:      planet->u = u_null;
+epic_funcs_diag.c:      planet->u = u_null;
+epic_funcs_diag.c:      planet->u = u_null;
+epic_funcs_diag.c:      sprintf(Message,"unrecognized planet->index=%d",planet->index);
+epic_funcs_diag.c:  set_microphysics_params(planet->index);
+epic_funcs_diag.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_diag.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_funcs_diag.c:    sprintf(Message,"unrecognized planet->type=%s",planet->type);
+epic_funcs_diag.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_diag.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_funcs_diag.c:  omega = planet->omega_sidereal;
+epic_funcs_diag.c:  GM          = planet->GM;
+epic_funcs_diag.c:  spin_factor = (planet->omega_sidereal*a)*(planet->omega_sidereal*a)*(a/GM);
+epic_funcs_diag.c:  ge          = (1.+1.5*planet->J2-spin_factor)*GM/(a*a);
+epic_funcs_diag.c:  gp          = (1.-3.*(a/c)*(a/c)*planet->J2)*GM/(c*c);
+epic_funcs_diag.c:    spin_factor = (planet->omega_sidereal*a)*(planet->omega_sidereal*a)*(a/GM);
+epic_funcs_diag.c:    ge          = (1.+1.5*planet->J2-spin_factor)*GM/(a*a);
+epic_funcs_diag.c:    gp          = (1.-3.*(a/c)*(a/c)*planet->J2)*GM/(c*c);
+epic_funcs_diag.c: * The molar mass for dry air is assumed to be R_GAS/planet->rgas.
+epic_funcs_diag.c:         (planet->rgas*var.species[is].molar_mass);
+epic_funcs_diag.c:          kappap1 = planet->kappa+1.;
+epic_funcs_diag.c:                          (kappap1*(botval-topval)),1./planet->kappa);
+epic_funcs_diag.c:    if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_diag.c:          EXNER3(K,J,I) = planet->cp*temperature/theta;
+epic_funcs_diag.c:          EXNER3(K,J,I) = planet->cp*temperature/theta;
+epic_funcs_diag.c:          EXNER2(K,J,I) = planet->cp*temperature/theta;
+epic_funcs_diag.c:          EXNER2(K,J,I) = planet->cp*temperature/theta;
+epic_funcs_diag.c:    if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_diag.c:    else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_funcs_diag.c:      sprintf(Message,"not implemented for planet->type=%s",planet->type);
+epic_funcs_diag.c:    cprh2 = CPRH2*planet->rgas;
+epic_funcs_diag.c:          HEAT3(K,J,I) += (planet->x_h2)*(uoup+cprh2*temperature)*log(theta_p/theta_o)*dfpdt;  
+epic_funcs_diag.c:        cs = sqrt(planet->rgas*.5*(T2(K,J,I)+T2(K,J-1,I))/(1.-planet->kappa));
+epic_funcs_diag.c:          cs = sqrt(planet->rgas*.5*(T2(K,J,I)+T2(K,J,I-1))/(1.-planet->kappa));
+epic_funcs_diag.c:    mu_dry = R_GAS/planet->rgas;
+epic_funcs_diag.c:    mu_dry_inv = planet->rgas/R_GAS;
+epic_funcs_diag.c:    mu = R_GAS/planet->rgas;
+epic_funcs_diag.c:    if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_diag.c:      sumv[HDRY2_INDEX] = planet->x_h2*sumv_h2+planet->x_he*sumv_he;
+epic_funcs_diag.c:      sumv[HDRY3_INDEX] = planet->x_h2*sumv_h2+planet->x_he*sumv_he;
+epic_funcs_diag.c:    else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_funcs_diag.c:      switch(planet->index) {
+epic_funcs_diag.c:          sprintf(Message,"planet->name=%s not yet set up",planet->name);
+epic_funcs_diag.c:      sprintf(Message,"planet->type=%s not yet set up",planet->type);
+epic_funcs_diag.c:  sqrt_mab = sqrt(1./molar_mass(vapor_index)+planet->rgas/R_GAS);
+epic_funcs_diag.c:    switch(planet->index) {
+epic_funcs_diag.c:        sprintf(Message,"planet=%s not yet implemented",planet->name);
+epic_funcs_diag.c:    switch(planet->index) {
+epic_funcs_diag.c:        sprintf(Message,"need to implement cloud phases for planet->index=%d",planet->index);
+epic_funcs_init.c:   * Assume planet->re is the equatorial radius for the layer K = K0 where grid.p_ref[2*K+1] is 
+epic_funcs_init.c:  grid.re[K0] = a = planet->re;
+epic_funcs_init.c:   * To get started, estimate GM = planet->GM, c = planet->rp;
+epic_funcs_init.c:  c            = planet->rp;
+epic_funcs_init.c:  GM           = planet->GM;
+epic_funcs_init.c:  spin_factor  = (planet->omega_sidereal*a)*(planet->omega_sidereal*a)*(a/GM);
+epic_funcs_init.c:  ge           = (1.+1.5*planet->J2-spin_factor)*GM/(a*a);
+epic_funcs_init.c:  gp           = (1.-3.*(a/c)*(a/c)*planet->J2)*GM/(c*c);
+epic_funcs_init.c:  grid.rp[K0]  = c = polar_radius(a,planet->J2,GM,planet->omega_sidereal);
+epic_funcs_init.c:      grid.rp[K] = c = polar_radius(a,planet->J2,GM,planet->omega_sidereal);
+epic_funcs_init.c:      spin_factor  = SQR(planet->omega_sidereal*a)*(a/GM);
+epic_funcs_init.c:      ge           = (1.+1.5*planet->J2-spin_factor)*GM/(a*a);
+epic_funcs_init.c:      gp           = (1.-3.*(a/c)*(a/c)*planet->J2)*GM/(c*c);
+epic_funcs_init.c:      grid.rp[K] = c = polar_radius(a,planet->J2,GM,planet->omega_sidereal);
+epic_funcs_init.c:      spin_factor  = SQR(planet->omega_sidereal*a)*(a/GM);
+epic_funcs_init.c:      ge           = (1.+1.5*planet->J2-spin_factor)*GM/(a*a);
+epic_funcs_init.c:      gp           = (1.-3.*(a/c)*(a/c)*planet->J2)*GM/(c*c);
+epic_funcs_init.c:    if (strcmp(planet->type,"terrestrial") != 0) {
+epic_funcs_init.c:      sprintf(Message,"planet->type=%s not implemented",planet->type);
+epic_funcs_init.c:    spin_factor = (planet->omega_sidereal*planet->re)*(planet->omega_sidereal*planet->re)*(planet->re/planet->GM);
+epic_funcs_init.c:    ge          = (1.+1.5*planet->J2-spin_factor)*planet->GM/(planet->re*planet->re);
+epic_funcs_init.c:    gp          = (1.-3.*(planet->re/planet->rp)*(planet->re/planet->rp)*planet->J2)*planet->GM/(planet->rp*planet->rp);
+epic_funcs_init.c:      gravity[J-JLO] = (planet->re*ge*coslat2+planet->rp*gp*sinlat2)/sqrt(planet->re*planet->re*coslat2+planet->rp*planet->rp*sinlat2);
+epic_funcs_init.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_funcs_init.c:  else if (strcmp(planet->name,"Goldmine") == 0) {
+epic_funcs_init.c:        y = (grid.lat[2*J+1]-grid.lat[2*(grid.nj/2)-1])*DEG*planet->re;
+epic_funcs_init.c:          x = (grid.lon[2*I+1]-0.)*DEG*planet->re*cos(grid.lat[2*J+1]*DEG);
+epic_funcs_init.c:        if (strcmp(nc_planet_name,planet->name) != 0) {
+epic_funcs_init.c:    if (strncmp(planet->name,"Venus",5) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Earth",5) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Mars",4) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Titan",5) == 0) {
+epic_funcs_init.c:      sprintf(Message,"failed to open spherical-harmonic file(s) for %s",planet->name);
+epic_funcs_init.c:    if (strncmp(planet->name,"Venus",5) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Earth",5) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Mars",4) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Titan",5) == 0) {
+epic_funcs_init.c:      sprintf(Message,"failed to read spherical-harmonic topography-coefficient file for %s",planet->name);
+epic_funcs_init.c:  rerp = planet->re/planet->rp;
+epic_funcs_init.c:    if (strncmp(planet->name,"Titan",5) == 0) {
+epic_funcs_init.c:  if (strncmp(planet->name,"Venus",5) == 0) {
+epic_funcs_init.c:  else if (strncmp(planet->name,"Earth",5) == 0) {
+epic_funcs_init.c:  else if (strncmp(planet->name,"Mars",4) == 0) {
+epic_funcs_init.c:  else if (strncmp(planet->name,"Titan",5) == 0) {
+epic_funcs_init.c:   *       temporarilty assigning grid.re[K] = planet->re, grid.rp[K] = planet->rp here.
+epic_funcs_init.c:    grid.re[K] = planet->re;
+epic_funcs_init.c:    grid.rp[K] = planet->rp;
+epic_funcs_init.c:    sprintf(phi_surface_nc,"./%s_%02d_phi_surface.nc",planet->name,num_files);
+epic_funcs_init.c:    WRITEC(planet->name,planet_name,32);
+epic_funcs_init.c:  if (strcmp(planet->type,"gas-giant") != 0) {
+epic_funcs_init.c:    sprintf(Message,"not implemented for planet->type=%s",planet->type);
+epic_funcs_init.c:      exnerdat[iitp] = planet->cp*var.tdat[iitp]/thetadat[iitp];
+epic_funcs_init.c:        U_FINE(iitp,J) = def->u_scale*planet->u(var.pdat[iitp],grid.lat[2*J+1]);
+epic_funcs_init.c:        temperature    = EXNER_FINE(iitp,J)*thetadat[iitp]/planet->cp;
+epic_funcs_init.c:        U(grid.it_uv,K,J,I) = def->u_scale*planet->u(P2(K,J,I),grid.lat[2*J+1]);
+epic_funcs_init.c:      U(grid.it_uv,K,J,I) = def->u_scale*planet->u(P3(K,  J,I),grid.lat[2*J+1]);
+epic_funcs_init.c:      U(grid.it_uv,K,J,I) = def->u_scale*planet->u(P3(K-1,J,I),grid.lat[2*J+1]);
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:          switch (planet->index) {
+epic_funcs_init.c:        mu_dry = R_GAS/planet->rgas;
+epic_funcs_init.c:      switch(planet->index) {
+epic_funcs_init.c:          sprintf(Message,"CH_4 not yet implemented for %s",planet->name);
+epic_funcs_init.c:  switch(planet->index) {
+epic_funcs_init.c:      sprintf(Message,"case planet->index=%d not yet implemented",planet->index);
+epic_funcs_init.c:    switch(planet->index) {
+epic_funcs_init.c:        sprintf(Message,"not yet implemented for %s",planet->name);
+epic_funcs_init.c:    sprintf(string,EPIC_PATH"/data/%s/iris/temperature.dat",planet->name);
+epic_funcs_init.c:    z    = -log(p/planet->p0);
+epic_funcs_init.c:    sprintf(string,EPIC_PATH"/data/%s/iris/fpara.dat",planet->name);
+epic_funcs_init.c:    z  = -log(p/planet->p0);
+epic_funcs_init.c:    if (strcmp(planet->name,"Earth") == 0) {
+epic_funcs_init.c:    else if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Venus",5) == 0) {
+epic_funcs_init.c:    else if (strncmp(planet->name,"Mars",4) == 0) {
+epic_funcs_init.c:    else if (strcmp(planet->name,"Titan") == 0) {
+epic_funcs_init.c:      sprintf(data_file,EPIC_PATH"/data/%s/sounding.dat",planet->name);
+epic_funcs_init.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_init.c:  spin_factor = (planet->omega_sidereal*planet->re)*(planet->omega_sidereal*planet->re)*(planet->re/planet->GM);
+epic_funcs_init.c:  ge          = (1.+1.5*planet->J2-spin_factor)*planet->GM/(planet->re*planet->re);
+epic_funcs_init.c:  gp          = (1.-3.*(planet->re/planet->rp)*(planet->re/planet->rp)*planet->J2)*planet->GM/(planet->rp*planet->rp);
+epic_funcs_init.c:  gravity     = (planet->re*ge*coslat2+planet->rp*gp*sinlat2)/sqrt(planet->re*planet->re*coslat2+planet->rp*planet->rp*sinlat2);
+epic_funcs_init.c:  if (strcmp(planet->name,"Earth") == 0) {
+epic_funcs_init.c:  else if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_funcs_init.c:     * NOTE: For Mars, planet->p0 = 610 Pa                     *
+epic_funcs_init.c:          OPENMARS_THETA(k,j,i) = OPENMARS_TEMP(k,j,i)*pow(planet->p0/p,planet->kappa);
+epic_funcs_init.c:                                       *.5*planet->rgas*(OPENMARS_TEMP(k,  j,i)/openmars_grid->sigma[k  ]
+epic_funcs_init.c:                         *SQR(planet->rgas*T2(K,J,I)/g);
+epic_funcs_init.c:          c2factor = planet->rgas*c2factor/(c2factor-planet->rgas);
+epic_funcs_init.c:     * NOTE: For Mars, planet->p0 = 610 Pa                     *
+epic_funcs_init.c:          EMARS_THETA(k,j,i) = EMARS_TEMP(k,j,i)*pow(planet->p0/EMARS_P(k,j,i),planet->kappa);
+epic_funcs_init.c:          emars_phi[k] = emars_phi[k+1]+(p3-p1)*planet->rgas*EMARS_TEMP(k,j,i)/EMARS_P(k,j,i);
+epic_funcs_init.c:                         *SQR(planet->rgas*T2(K,J,I)/g);
+epic_funcs_init.c:          c2factor = planet->rgas*c2factor/(c2factor-planet->rgas);
+epic_funcs_init.c:          WEIZMANN_THETA(k,j,i) = WEIZMANN_TEMP(k,j,i)*pow(planet->p0/weizmann_grid->p[k],planet->kappa);
+epic_funcs_init.c:        T3(K,J,I)   = THETA(K,J,I)*pow(P3(K,J,I)/planet->p0,planet->kappa);
+epic_funcs_init.c:                         *SQR(planet->rgas*T2(K,J,I)/g);
+epic_funcs_io.c:    READI(&planet->index,planet_index,1);
+epic_funcs_io.c:    READC(planet->name,planet_name,32);
+epic_funcs_io.c:    READC(planet->type,planet_type,16);
+epic_funcs_io.c:    READC(planet->orbital_epoch,planet_orbital_epoch,8);
+epic_funcs_io.c:    READF(&planet->re,planet_re,1);
+epic_funcs_io.c:    READF(&planet->rp,planet_rp,1);
+epic_funcs_io.c:    READF(&planet->obliquity,planet_obliquity,1);
+epic_funcs_io.c:    READF(&planet->omega_sidereal,planet_omega_sidereal,1);
+epic_funcs_io.c:    READF(&planet->omega_synodic,planet_omega_synodic,1);
+epic_funcs_io.c:    READF(&planet->cp,planet_cp,1);
+epic_funcs_io.c:    READF(&planet->rgas,planet_rgas,1);
+epic_funcs_io.c:    READF(&planet->p0,planet_p0,1);
+epic_funcs_io.c:    planet->cpr   = planet->cp/planet->rgas;
+epic_funcs_io.c:    planet->kappa = 1./planet->cpr;
+epic_funcs_io.c:    READF(&planet->GM,planet_GM,1);
+epic_funcs_io.c:    READF(&planet->J2,planet_J2,1);
+epic_funcs_io.c:    READF(&planet->x_he,planet_x_he,1);
+epic_funcs_io.c:    READF(&planet->x_h2,planet_x_h2,1);
+epic_funcs_io.c:    READF(&planet->x_3,planet_x_3,1);
+epic_funcs_io.c:    READF(&planet->a,planet_a,1);
+epic_funcs_io.c:    READF(&planet->e,planet_e,1);
+epic_funcs_io.c:    READF(&planet->i,planet_i,1);
+epic_funcs_io.c:    READF(&planet->lon_ascending_node,planet_lon_ascending_node,1);
+epic_funcs_io.c:    READF(&planet->lon_perihelion,planet_lon_perihelion,1);
+epic_funcs_io.c:    READF(&planet->mean_lon,planet_mean_lon,1);
+epic_funcs_io.c:    READF(&planet->orbit_period,planet_orbit_period,1);
+epic_funcs_io.c:    READF(&planet->vernal_equinox_anomaly,planet_vernal_equinox_anomaly,1);
+epic_funcs_io.c:    READF(&planet->kinvisc,planet_kinvisc,1);
+epic_funcs_io.c:    READF(&planet->dynvisc,planet_dynvisc,1);
+epic_funcs_io.c:    READF(&planet->k_a,planet_k_a,1);
+epic_funcs_io.c:    WRITEI(&planet->index,planet_index,1);
+epic_funcs_io.c:    WRITEC(planet->name,planet_name,32);
+epic_funcs_io.c:    WRITEC(planet->type,planet_type,16);
+epic_funcs_io.c:    WRITEC(planet->orbital_epoch,planet_orbital_epoch,8);
+epic_funcs_io.c:    WRITEF(&planet->re,planet_re,1);
+epic_funcs_io.c:    WRITEF(&planet->rp,planet_rp,1);
+epic_funcs_io.c:    WRITEF(&planet->obliquity,planet_obliquity,1);
+epic_funcs_io.c:    WRITEF(&planet->omega_sidereal,planet_omega_sidereal,1);
+epic_funcs_io.c:    WRITEF(&planet->omega_synodic,planet_omega_synodic,1);
+epic_funcs_io.c:    WRITEF(&planet->cp,planet_cp,1);
+epic_funcs_io.c:    WRITEF(&planet->rgas,planet_rgas,1);
+epic_funcs_io.c:    WRITEF(&planet->p0,planet_p0,1);
+epic_funcs_io.c:    WRITEF(&planet->GM,planet_GM,1);
+epic_funcs_io.c:    WRITEF(&planet->J2,planet_J2,1);
+epic_funcs_io.c:    WRITEF(&planet->x_he,planet_x_he,1);
+epic_funcs_io.c:    WRITEF(&planet->x_h2,planet_x_h2,1);
+epic_funcs_io.c:    WRITEF(&planet->x_3,planet_x_3,1);
+epic_funcs_io.c:    WRITEF(&planet->a,planet_a,1);
+epic_funcs_io.c:    WRITEF(&planet->e,planet_e,1);
+epic_funcs_io.c:    WRITEF(&planet->i,planet_i,1);
+epic_funcs_io.c:    WRITEF(&planet->lon_ascending_node,planet_lon_ascending_node,1);
+epic_funcs_io.c:    WRITEF(&planet->lon_perihelion,planet_lon_perihelion,1);
+epic_funcs_io.c:    WRITEF(&planet->mean_lon,planet_mean_lon,1);
+epic_funcs_io.c:    WRITEF(&planet->orbit_period,planet_orbit_period,1);
+epic_funcs_io.c:    WRITEF(&planet->vernal_equinox_anomaly,planet_vernal_equinox_anomaly,1);
+epic_funcs_io.c:    WRITEF(&planet->kinvisc,planet_kinvisc,1);
+epic_funcs_io.c:    WRITEF(&planet->dynvisc,planet_dynvisc,1);
+epic_funcs_io.c:    WRITEF(&planet->k_a,planet_k_a,1);
+epic_funcs_io.c:      fspot           = 2.*planet->omega_sidereal*sin(latspot[ispot]*DEG);
+epic_funcs_io.c:      ampspot[ispot] *= factor*bspot[ispot]*DEG*planet->re*fabs(fspot);
+epic_funcs_io.c:  if (strcmp(planet->name,"Venus") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->name,"Venus_LLR05") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->name,"Earth") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->name,"Goldmine") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->type,"gas-giant") == 0) {
+epic_funcs_io.c:  else if (strcmp(planet->name,"Titan") == 0) {
+epic_funcs_io.c:  else if (planet->x_h2 > 0.) {
+epic_funcs_io.c:  sprintf(infile,"./t_vs_p.%s",planet->name);
+epic_funcs_io.c:    sprintf(infile,EPIC_PATH"/data/%s/t_vs_p.%s",planet->name,planet->name);
+epic_funcs_io.c:  fprintf(stdout,"                      System: %s \n",planet->name);
+epic_funcs_io.c:                 planet->name,grid.nk,grid.nj,grid.ni);
+epic_funcs_thermo.c:  xh2      = planet->x_h2;
+epic_funcs_thermo.c:  xhe      = planet->x_he;
+epic_funcs_thermo.c:  x3       = planet->x_3;
+epic_funcs_thermo.c:  if (planet->x_h2 > 0) {
+epic_funcs_thermo.c:    *cpr_out = cpr = planet->cpr;
+epic_funcs_thermo.c:  if (planet->p0 < 1.e+5) {
+epic_funcs_thermo.c:    p0 = planet->p0;
+epic_funcs_thermo.c:      thetaln = ( planet->x_h2*CPRH2*((1.-thermo.fpdat[n])*log(tho[i])
+epic_funcs_thermo.c:                +(planet->x_he*CPRHE
+epic_funcs_thermo.c:                 +planet->x_3*CPR3 )*log(temp[i]) )/cpr;
+epic_funcs_thermo.c:    kappa = planet->kappa;
+epic_funcs_thermo.c:    if (planet->p0 < 1.e+5) {
+epic_funcs_thermo.c:      p0 = planet->p0;
+epic_funcs_thermo.c:  if (planet->x_h2 == 0.) {
+epic_funcs_thermo.c:      temperature = exp( (planet->cpr*log(theta1)
+epic_funcs_thermo.c:                         -CPRH2*planet->x_h2*((1.-fp)*CCOLN_THERMO+fp*CCPLN_THERMO))/
+epic_funcs_thermo.c:                         (CPRHE*planet->x_he+CPR3*(1.-planet->x_he)) );
+epic_funcs_thermo.c:    kappa = planet->kappa;
+epic_funcs_thermo.c:    if (planet->p0 < 1.e+5) {
+epic_funcs_thermo.c:      p0 = planet->p0;
+epic_funcs_thermo.c:  if (planet->x_h2 == 0.) {
+epic_funcs_thermo.c:      cc           = planet->x_h2*2.5*((1.-fp)*CCOLN_THERMO+fp*CCPLN_THERMO);
+epic_funcs_thermo.c:      theta        = exp(cc/planet->cpr)*
+epic_funcs_thermo.c:                      pow(temperature,(( 3.5*planet->x_h2  /* 3.5 since high T */
+epic_funcs_thermo.c:                                        +2.5*planet->x_he
+epic_funcs_thermo.c:                                        +3.5*planet->x_3 )/planet->cpr));
+epic_funcs_thermo.c:      thetaln = (planet->x_h2)*( (1.-fp)*log(thermo_vector[0])
+epic_funcs_thermo.c:               +(planet->x_he*2.5+planet->x_3*3.5)*log(temperature)/planet->cpr;
+epic_funcs_thermo.c:    kappa         = planet->kappa;
+epic_funcs_thermo.c:    kappa         = planet->kappa*R_GAS/(2.016*planet->rgas);
+epic_funcs_thermo.c:    if (planet->p0 < 1.e+5) {
+epic_funcs_thermo.c:      p0 = planet->p0;
+epic_funcs_thermo.c:  if (planet->x_h2 == 0.) {
+epic_funcs_thermo.c:    press = p0*pow(temperature/theta,planet->cpr);
+epic_funcs_thermo.c:    press = p0*pow(temperature/theta,planet->cpr);
+epic_funcs_thermo.c:  if (planet->x_h2 == 0.) {
+epic_funcs_thermo.c:    enthalpy = planet->cpr*temperature;
+epic_funcs_thermo.c:      enthalpy = planet->cpr*temperature;
+epic_funcs_thermo.c:       * NOTE: Should replace "planet->x_3" with a loop
+epic_funcs_thermo.c:      enthalpy = (planet->x_h2)*((1.-fp)*ho+fp*hp)
+epic_funcs_thermo.c:                +(planet->x_he*2.5+planet->x_3*3.5)*temperature;
+epic_funcs_thermo.c:      *fgibb   = planet->x_h2*2.5*(CCPLN_THERMO-CCOLN_THERMO)*temperature
+epic_funcs_thermo.c:                    -planet->x_h2*(hp-ho);
+epic_funcs_thermo.c:      enthalpy = (planet->x_h2)*((1.-fp)*thermo_vector[0]
+epic_funcs_thermo.c:                +(planet->x_he*2.5+planet->x_3*3.5)*temperature;
+epic_funcs_thermo.c:      *fgibb   = planet->x_h2*thermo_vector[2];
+epic_funcs_thermo.c:  rgas      = planet->rgas;
+epic_funcs_thermo.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_funcs_thermo.c:  else if (strcmp(planet->name,"Goldmine") == 0) {
+epic_funcs_thermo.c:  else if (strcmp(planet->name,"Mars") == 0) {
+epic_globals.c: *      planet->obliquity              = 180deg-obliquity(IAU)
+epic_globals.c: *      planet->vernal_equinox_anomaly = 180+vernal_equinox_anomaly(IAU)
+epic_globals.c: *  The quantity planet->rgas should refer to the dry-air gas constant,
+epic_init_eigen.c:  rgas = planet->rgas;
+epic_init_eigen.c:    z[kk] = -log(press/planet->p0);
+epic_init_eigen.c:  if (strcmp(planet->type,"gas-giant") == 0 || grid.coord_type == COORD_ISENTROPIC) {
+epic_init_eigen.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_init_eigen.c:    sprintf(Message,"Unknown planet->type = %s",planet->type);
+epic_init_eigen.c:  fprintf(outfile,"  planet->name = %s.\n",planet->name);
+epic_initial.c: *  NOTE: planet->cp and planet->kappa are reassigned according to the value of cpr 
+epic_initial.c: *        Use the function return_cp() rather than planet->cp unless you actually want
+epic_initial.c:  switch(planet->index) {
+epic_initial.c:        if (strcmp(planet->name,"Jupiter") == 0 ||
+epic_initial.c:            strcmp(planet->name,"Venus")   == 0) {
+epic_initial.c:        else if (strcmp(planet->name,"Saturn") == 0) {
+epic_initial.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_initial.c:      if (strcmp(planet->type,"gas-giant") == 0) {
+epic_initial.c:        defaults.pbot = grid.pbot = planet->p0;
+epic_initial.c:        if (strcmp(planet->type,"gas-giant") == 0) {
+epic_initial.c:   * This fills in the 'thermo' struct with planet-relevant values.
+epic_initial.c:   * It returns planet->cpr, which is the planet's reference cp.
+epic_initial.c:   * Here, we are passing the address of planet->cpr, so that its value can be set
+epic_initial.c:   *   planet->cpr: nondimensional ref. cp
+epic_initial.c:   *    planet->cp: spec. heat at const. p
+epic_initial.c:   *  planet->rgas: gas constant
+epic_initial.c:   * planet->kappa: rgas/cp
+epic_initial.c:  thermo_setup(planet,&planet->cpr);
+epic_initial.c:  /* Assign thermodynamics function's reference cpr to planet->cp */
+epic_initial.c:  planet->cp    = planet->cpr*planet->rgas;
+epic_initial.c:  planet->kappa = 1./planet->cpr;
+epic_initial.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_initial.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_initial.c:    sprintf(Message,"planet->type=%s not yet implemented\n",planet->type);
+epic_initial.c:  if (strcmp(planet->name,"Venus") == 0) {
+epic_initial.c:  else if (strcmp(planet->name,"Jupiter") == 0) {
+epic_initial.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_initial.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_initial.c:    sprintf(Message,"unrecognized planet->type=%s",planet->type);
+epic_initial.c:        switch(planet->index) {
+epic_initial.c:      switch(planet->index) {
+epic_initial.c:        mu                 = R_GAS/planet->rgas;
+epic_initial.c:        mu                 = R_GAS/planet->rgas;
+epic_initial.c:  if (strcmp(planet->type,"gas-giant") == 0) {
+epic_initial.c:  else if (strcmp(planet->type,"terrestrial") == 0) {
+epic_initial.c:    sprintf(Message,"planet->type=%s, need an initialization scheme for this case",planet->type);
+epic_initial.c:   * NOTE: For planet->type "terrestrial" and grid.coord_type == COORD_ISENTROPIC,
+epic_main.c:  thermo_setup(planet,&planet->cpr);
+epic_sensible_heating.c:    if (strcmp(planet->name,"Jupiter") == 0) {
+epic_sensible_heating.c:      sprintf(Message,"not yet implemented for %s",planet->name);
+epic_sensible_heating.c:  if (strcmp(planet->name,"Jupiter") == 0) {
+epic_sensible_heating.c:    sprintf(Message,"need to implement for %s",planet->name);
+epic_sensible_heating.c:    sprintf(infile,"./t_cool_vs_p.%s",planet->name);
+epic_sensible_heating.c:      sprintf(infile,EPIC_PATH"/data/%s/t_cool_vs_p.%s",planet->name,planet->name);
+epic_sensible_heating.c:      fprintf(relax_times," %s\n",planet->name);
+epic_sensible_heating.c:      if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_sensible_heating.c:        switch(planet->index) {
+epic_sensible_heating.c:    if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_sensible_heating.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_sensible_heating.c:    if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_sensible_heating.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {
+epic_sensible_heating.c:    ans       = (315.-dt_y*sin2_lat-dth_z*log(p_p0)*cos2_lat)*pow(p_p0,planet->kappa);
+epic_sensible_heating.c:  else if (strcmp(planet->name,"Venus_LLR05") == 0) {
+epic_sensible_heating.c:  else if (strcmp(planet->name,"Titan") == 0) {
+epic_sensible_heating.c:    sprintf(Message,"not yet implemented for %s",planet->name);
+epic_timestep.c:     * NOTE: For planet->type "terrestrial" and grid.coord_type == COORD_ISENTROPIC,
+epic_timestep.c:       * Scale rln with planet->re to reduce difference-of-large-numbers issues.
+epic_timestep.c:      rlnn = grid.rln[kk][jj+1]/planet->re;
+epic_timestep.c:         * Scale rln with planet->re to reduce difference-of-large-number issues.
+epic_timestep.c:        rlnn  = grid.rln[kk][jj+1]/planet->re;
+epic_timestep.c:  if (strcmp(planet->name,"Held_Suarez") == 0) {

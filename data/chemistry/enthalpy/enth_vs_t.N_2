@@ -1,0 +1,23 @@
+Values of Enthalpy for Phases: Nitrogen (N_2)
+         2002. C.J.Palotai
+From: # Perry's Chemical Engineers' Handbook
+        7th Edition, pg. 2-257
+
+T(K)    hi(kJ/kg)   hf(kJ/kg)     hg(kJ/kg)
+16
+  63.15    NaN      -148.5        64.1
+  65       NaN      -144.9        65.8
+  70       NaN      -135.2        70.5
+  75       NaN      -125.4        74.9
+  77.35    NaN      -120.8        76.8
+  80       NaN      -115.6        78.9
+  85       NaN      -105.7        82.3
+  90       NaN       -95.6        85.0
+  95       NaN       -85.2        86.8
+ 100       NaN       -74.5        87.7
+ 105       NaN       -63.8        87.4
+ 110       NaN       -51.4        85.6
+ 115       NaN       -38.1        81.8
+ 120       NaN       -21.4        74.3
+ 125       NaN         5.1        57.2
+ 126.25    NaN        34.8        34.8        

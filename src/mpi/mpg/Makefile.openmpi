@@ -1,0 +1,53 @@
+#/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+# *                                                                 *
+# * Copyright (C) 1998-2010 Timothy E. Dowling                      *
+# *                                                                 *
+# * This program is free software; you can redistribute it and/or   *
+# * modify it under the terms of the GNU General Public License     *
+# * as published by the Free Software Foundation; either version 2  *
+# * of the License, or (at your option) any later version.          *
+# * A copy of this License is in the file:                          *
+# *   $EPIC_PATH/License.txt                                        *
+# *                                                                 *
+# * This program is distributed in the hope that it will be useful, *
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of  *
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.            *
+# *                                                                 *
+# * You should have received a copy of the GNU General Public       *
+# * License along with this program; if not, write to the Free      *
+# * Software Foundation, Inc., 51 Franklin Street, Fifth Floor,     *
+# * Boston, MA 02110-1301, USA.                                     *
+# *                                                                 *
+# * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+MPG_HOME    = .
+CC          = mpicc
+F77         = mpif77
+AR          = ar crl
+RANLIB      = ranlib
+
+INCLUDE_DIR =  -I$(MPG_HOME) \
+               -I$(EPIC_PATH)/include
+	     
+C_FLAGS     =  $(CFLAGS) $(INCLUDE_DIR) 
+
+OBJS        = map_decomp.o map_var.o map_read.o map_write.o \
+	      map_wslice.o map_rslab.o map_wslab.o map_edge.o \
+              map_util.o mpich_decomp.o 
+
+libmpg.a: $(OBJS)
+	$(AR) libmpg.a $(OBJS) ;
+	@if [ ! -e $(EPIC_PATH)/lib/libmpg.a ] ; then \
+	  ln -s $(EPIC_PATH)/src/mpi/mpg/libmpg.a $(EPIC_PATH)/lib/libmpg.a ; \
+	fi
+
+install: libmpg.a
+	$(RANLIB) libmpg.a
+
+clear:
+	/bin/rm -f *.o *~ *.BAK ._*
+
+.c.o:
+	$(CC)  $(C_FLAGS) -c $*.c
+
+# DO NOT DELETE THIS LINE -- make depend depends on it.

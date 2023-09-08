@@ -1,0 +1,22 @@
+ 2nd virial coefficient: molecular hydrogen, H_2.
+ Data from "The virial coefficients of pure gases
+ and mixtures," by Dymond and Smith (1980, Oxford).
+ Using the provided smooth fit of all the data.
+
+ #    T[K]  B[cm^3/mol]  error[cm^3/mol]
+ 15
+       14.      -254.          5.
+       15.      -230.          5.
+       17.      -191.          5.
+       19.      -162.          5.
+       22.      -132.          5.
+       25.      -110.          3.
+       30.       -82.          3.
+       40.       -52.          2.
+       50.       -33.          2.
+       75.       -12.          1.
+      100.        -1.9         1.
+      150.         7.1         0.5
+      200.        11.3         0.5
+      300.        14.8         0.5
+      400.        15.2         0.5

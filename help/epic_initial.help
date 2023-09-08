@@ -1,0 +1,71 @@
+
+ Name 
+   initial - create initial epic.nc (netCDF format) file 
+
+ Syntax
+   initial [ options ]  
+
+ Description 
+   Creates a netCDF format input file for the EPIC model.
+   The user picks a planet and configures its atmosphere by 
+   responding to prompts. 
+
+ Tips
+    Create a subdirectory (folder) for each type of experiment,
+    outside of the $EPIC_PATH directory tree, and run the model
+    from that subdirectory. The files unique to your run will then
+    be separated from other runs, which will help with managing 
+    different projects.
+
+    You may wish to put your equivalent of ~/epic/bin in your path.
+
+Troubleshooting
+
+    Hybrid Vertical Coordinate
+        The model uses linear interpolation on the data values in the
+        table epic/data/<planet>/t_vs_p.<planet> when setting up the
+        hybrid coordinate.  If you encounter a glitch in the initial
+        values of THETA near p_sigma, adding more points to the 
+        t_vs_p file by interpolation, especially in the vicinity of
+        p_sigma, may clear up the problem.
+
+ Options 
+
+   -help or -h   Write this message. 
+
+ Examples
+   These examples assume you have your version of ~/epic/bin
+   in your path, such that the executable 'initial' can be
+   invoked from any directory.
+
+
+   To create the file epic.nc for an experiment called run01: 
+   %cd
+   %mkdir run01
+   %cd run01
+   %initial 
+
+   Next is an example of the contents of a 'layers.dat' file for 
+   use with initial's 'from file' option for setting up the model
+   layer intervals. The pressures correspond to the layer
+   interfaces; the K=0 value is ptop.
+
+   nk        10
+   K      p3_ref[hPa]
+   0          2.3
+   1          8.2
+   2         28.0
+   3         96.9
+   4        180.2
+   5        334.9
+   6        622.6
+   7       1157.4
+   8       2151.6
+   9       3999.6
+  10       7435.0
+
+
+
+   
+
+
