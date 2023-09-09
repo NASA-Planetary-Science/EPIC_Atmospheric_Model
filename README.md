@@ -18,7 +18,7 @@ A. INSTALLING
 
 When source code is not managed (obtained) via GitHub:
   
-1. To decompress and de-archive the file epic.tar.gz:
+To decompress and de-archive the file epic.tar.gz:
 
 a) If a directory named epic already exists, delete it (or move it): <br>
 ```
@@ -143,7 +143,7 @@ These changes will take effect when you next log in. You can make the changes ta
 source ~/.cshrc
 ```
 
-4.  To compile the model:
+To compile the model:
 
 a) Change directories to the source directory by typing <br>
 ```
@@ -167,17 +167,17 @@ If the compilation is successful, the executables will be found in $EPIC_PATH/bi
 
 NOTE: For Ubuntu linux, in the top Makefile in epic/src, change 'SHELL = /bin/sh' to 'SHELL = /bin/bash'.
 
-6.  The IDL tools in $EPIC_PATH/tools/IDL use the environoment variable IDL_EPIC_PATH, which should be set to be the working directory for IDL plots and movies.
+The IDL tools in $EPIC_PATH/tools/IDL use the environoment variable IDL_EPIC_PATH, which should be set to be the working directory for IDL plots and movies.
 
 B. TROUBLESHOOTING
 
-1. If the netCDF make fails, look at the file <br>
+If the netCDF make fails, look at the file <br>
 ```
 $EPIC_PATH/netcdf/src/INSTALL
 ```
 for examples of environment variables that work for various platforms.  Use a working combination for your platform (ideally ones with "-O" flags for optimization) in your ~/.cshrc file, type "source ~/.cshrc" and then recompile.
 
- 2. A "semget" or other semaphore error can usually be cleared up by using ipcs and ipcrm, or for example mpich's sbin/cleanipcs script.
+A "semget" or other semaphore error can usually be cleared up by using ipcs and ipcrm, or for example mpich's sbin/cleanipcs script.
 
 C. INITIALIZING
 
