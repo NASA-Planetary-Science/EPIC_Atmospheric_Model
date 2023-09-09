@@ -116,7 +116,9 @@ epic/           Top EPIC-model directory <br>
   EPIC_CC is the name of the C compiler to be used for EPIC source files. <br>
   OMPI_CC is the C compiler for Open MPI.
   ```
-  NOTE: Use the most ANSI-compatible compiler available. For example, on the SunOS use c89, not the default cc, or install and use the most recent gcc from Gnu. For Intel-chip machines, icc is often the best choice. Louisville likes clang because of its static analyzer and helpful error messages.
+  NOTE: Use the most ANSI-compatible compiler available. For example, on the SunOS use c89,
+  not the default cc, or install and use the most recent gcc from Gnu. For Intel-chip machines,
+  icc is often the best choice. Louisville likes clang because of its static analyzer and helpful error messages.
   ```
   EPIC_CFLAG has the following recognized cases <br>
   ```
@@ -167,7 +169,7 @@ If the compilation is successful, the executables will be found in $EPIC_PATH/bi
 
 NOTE: For Ubuntu linux, in the top Makefile in epic/src, change 'SHELL = /bin/sh' to 'SHELL = /bin/bash'.
 
-The IDL tools in $EPIC_PATH/tools/IDL use the environoment variable IDL_EPIC_PATH, which should be set to be the working directory for IDL plots and movies.
+The IDL tools in $EPIC_PATH/tools/IDL use the environment variable IDL_EPIC_PATH, which should be set to be the working directory for IDL plots and movies.
 
 B. TROUBLESHOOTING
 
